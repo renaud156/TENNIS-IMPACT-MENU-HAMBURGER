@@ -1,156 +1,347 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espace coach – Tennis Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f5f6fb;
+      color: var(--color-navy);
+    }
 
-<style>
-.bouton-retour-fixe {
-  position: fixed !important;
-  top: 20px;
-  left: 20px;
-  background-color: #c9a33c;
-  color: white;
-  padding: 12px 20px;
-  font-size: 0.95em;
-  border-radius: 30px;
-  text-decoration: none;
-  z-index: 99999 !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: background 0.3s ease;
-}
-.bouton-retour-fixe:hover {
-  background-color: #b08e2c;
-}
-</style>
+    .hero-coach {
+      position: relative;
+      padding: 120px 0 90px;
+      background: linear-gradient(120deg, rgba(5, 10, 15, 0.85), rgba(20, 44, 69, 0.9)),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=80') center/cover;
+      color: var(--color-white);
+    }
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Espace Coach - Tennis Impact</title>
-  <link rel="stylesheet" href="style.css">
+    .hero-coach h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.6rem, 4vw, 3.3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero-coach p {
+      max-width: 680px;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-card);
+      padding: 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .content-section {
+      padding: 80px 0;
+    }
+
+    .content-section .section__grid {
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .coach-visual {
+      border-radius: var(--radius-large);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .engagement-card {
+      background: var(--color-white);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-card {
+      background: var(--color-night);
+      color: var(--color-white);
+      padding: clamp(2.5rem, 4vw, 3.5rem);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-strong);
+      max-width: 780px;
+      margin: 0 auto 100px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+      width: 100%;
+      padding: 0.95rem 1.1rem;
+      border-radius: 12px;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .form-grid textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-card button {
+      margin-top: 1.5rem;
+    }
+  </style>
 </head>
 <body>
-
-<div style="position: absolute; top: 20px; left: 20px; z-index: 9999;">
-  <a href="index.html" class="btn-retour" style="padding: 10px 20px; background-color: #FFD700; color: black; font-weight: bold; border-radius: 5px; text-decoration: none;">← Retour à l'accueil</a>
-</div>
-
-
-<a href="index.html" style="position: fixed; top: 20px; left: 20px; background-color: #c9a33c; color: white; padding: 12px 20px; font-size: 0.95em; border-radius: 30px; text-decoration: none; z-index: 999999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background 0.3s ease;">← Retour à l’accueil</a>
-
-
-
-<a href="index.html" style="
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #c9a33c;
-  color: white;
-  padding: 12px 20px;
-  font-size: 0.95em;
-  border-radius: 30px;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: background 0.3s ease;
-" onmouseover="this.style.backgroundColor='#b08e2c'" onmouseout="this.style.backgroundColor='#c9a33c'">
-← Retour à l’accueil
-</a>
-
-
-<a href="index.html" style="
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #c9a33c;
-  color: white;
-  padding: 12px 20px;
-  font-size: 0.95em;
-  border-radius: 30px;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: background 0.3s ease;
-" onmouseover="this.style.backgroundColor='#b08e2c'" onmouseout="this.style.backgroundColor='#c9a33c'">
-← Retour à l’accueil
-</a>
-
-
-
-
-<section style="position: relative; height: 400px; overflow: hidden;">
-  <img src="images/2.png" alt="Espace Coach" style="width: 100%; height: 100%; object-fit: cover;">
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
-    <h1 style="font-size: 3em; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Espace Coach</h1>
-    <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.6);">Rejoignez l’aventure Tennis Impact</p>
-  </div>
-</section>
-
-<section style="background:#ffffff; padding:60px 20px; color:#0c2340;">
-  <div style="max-width:1100px; margin:0 auto;">
-    <div style="background:white; padding:40px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
-
-      <h2 style="color:#c9a33c; font-size:1.8em; margin-bottom:15px;">Qu’est-ce que le contrat apporteur ?</h2>
-      <p style="font-size:1.1em; line-height:1.7;">
-        Le contrat apporteur d’affaires permet à un coach, un club ou une structure de recommander Tennis Impact à leurs joueurs. 
-        En contrepartie, le coach reçoit une <strong>commission sur chaque inscription validée</strong>.
-      </p>
-
-      <h3 style="margin-top:30px; font-size:1.4em;">Vos missions</h3>
-      <ul style="margin:15px 0 30px 20px; line-height:1.6;">
-        <li>Promouvoir les stages et offres de Tennis Impact</li>
-        <li>Recommander des joueurs potentiellement intéressés</li>
-        <li>Respecter notre image de marque</li>
-      </ul>
-
-      <h3 style="font-size:1.4em;">Rémunération</h3>
-      <p style="line-height:1.6;">
-        En tant qu’apporteur, vous percevez :
-        <br><br>
-        <strong>7% du montant HT</strong> la première année, puis :
-        <ul style="margin:10px 0 30px 20px;">
-          <li>5% les 2 années suivantes</li>
-          <li>4% les 2 années suivantes</li>
-          <li>3% les 2 années suivantes</li>
-          <li>2% pendant encore 3 ans</li>
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav" aria-label="Navigation principale">
+        <ul class="navbar__menu">
+          <li><a href="index.html#stages" class="nav-link">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a></li>
+          <li>
+            <a href="espace_coach.html" class="nav-link" aria-current="page">Espace coach</a>
+          </li>
+          <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
+          <li><a href="reserver.html" class="nav-link">Réserver un stage</a></li>
+          <li>
+            <a href="#contact" class="nav-link nav-link--cta" data-open-contact>Contact</a>
+          </li>
         </ul>
-        Soit une commission possible sur <strong>10 ans</strong>.
-      </p>
+      </nav>
+    </div>
+  </header>
 
-      <h3 style="font-size:1.4em;">Avantages</h3>
-      <ul style="margin:15px 0 30px 20px; line-height:1.6;">
-        <li>Suivi transparent des inscriptions</li>
-        <li>Contrat clair, sans exclusivité</li>
-        <li>Versement rapide après paiement</li>
-      </ul>
-
-      <p style="text-align:center;">
-        📄 <a href="docs/contrat_apporteur_tennis_impact.pdf" style="color:#0c2340; text-decoration:underline;" download>Télécharger le contrat complet</a>
-      </p>
-
-      <div style="text-align:center; margin-top:40px;">
-        <a href="#formulaire-coach" style="padding:15px 30px; font-size:1.1em; background:#c9a33c; color:white; border-radius:40px; text-decoration:none;">Je souhaite devenir partenaire</a>
+  <main>
+    <section class="hero-coach">
+      <div class="container section__grid">
+        <div>
+          <p class="hero__subtitle">Partenariat premium</p>
+          <h1>Devenez coach partenaire Tennis Impact</h1>
+          <p>Rejoignez un réseau d’experts passionnés, accédez à nos infrastructures haut de gamme et bénéficiez d’un accompagnement business sur mesure.</p>
+          <div class="hero__actions">
+            <a class="btn btn--gold" href="#formulaire">Rejoindre le programme</a>
+            <a class="hero__link hero__link--light" href="CONTRAT%20APPORTEUR%20TYPE.pdf" download>
+              Télécharger le contrat
+              <span class="hero__link-icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <h3>Commission jusqu'à 10 ans</h3>
+              <p>Rémunération progressive sur chaque joueur parrainé tout au long de sa progression.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>Accès infrastructures</h3>
+              <p>Réservez nos courts et espaces bien-être pour accueillir vos joueurs dans un cadre prestige.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>Outils marketing clé en main</h3>
+              <p>Kits digitaux, argumentaires commerciaux et reporting hebdomadaire des prospects.</p>
+            </div>
+          </div>
+        </div>
+        <div class="coach-visual">
+          <img src="https://images.unsplash.com/photo-1532339142463-fd0a8979791a?auto=format&fit=crop&w=1200&q=80" alt="Coachs de tennis Tennis Impact" />
+        </div>
       </div>
+    </section>
+
+    <section class="section content-section" id="missions">
+      <div class="container section__grid">
+        <div class="section__content">
+          <span class="eyebrow">Vos missions</span>
+          <h2>Devenez l’ambassadeur privilégié de nos stages</h2>
+          <p>Vous identifiez les profils adaptés, présentez l’expérience Tennis Impact et assurez un suivi personnalisé avant, pendant et après les programmes.</p>
+          <ul class="feature-list">
+            <li>Accompagner la sélection des stages et le planning annuel.</li>
+            <li>Préparer mentalement et physiquement les joueurs recommandés.</li>
+            <li>Partager des bilans réguliers avec notre cellule performance.</li>
+          </ul>
+        </div>
+        <div class="section__visual">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1400&q=80" alt="Coach accompagnant un joueur" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__intro">
+          <span class="eyebrow eyebrow--light">Engagements Tennis Impact</span>
+          <h2>Un partenariat construit sur la confiance</h2>
+          <p>Nous investissons dans votre réussite avec un accompagnement marketing, juridique et sportif.</p>
+        </div>
+        <div class="engagement-grid">
+          <div class="engagement-card">
+            <h3>Suivi business dédié</h3>
+            <p>Tracking hebdomadaire des prospects et conversion assurée par notre équipe admissions.</p>
+          </div>
+          <div class="engagement-card">
+            <h3>Programme de fidélité</h3>
+            <p>Bonus exclusifs sur l’hébergement, invitations VIP et accès aux événements pros.</p>
+          </div>
+          <div class="engagement-card">
+            <h3>Communauté d’experts</h3>
+            <p>Workshops trimestriels, masterclass de préparation mentale et veille technique continue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-card" id="formulaire">
+      <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 0.5rem;">Candidatez en 2 minutes</h2>
+      <p style="color: rgba(255, 255, 255, 0.75); max-width: 520px;">Dites-nous en plus sur votre structure et vos objectifs : notre équipe vous recontacte sous 24h.</p>
+      <form class="form-grid" id="coachForm">
+        <input type="text" name="name" placeholder="Nom &amp; Prénom" required />
+        <input type="email" name="email" placeholder="Email professionnel" required />
+        <input type="tel" name="phone" placeholder="Téléphone" required />
+        <select name="experience" required>
+          <option value="" disabled selected>Expérience coaching</option>
+          <option value="-5">0 - 5 ans</option>
+          <option value="5-10">5 - 10 ans</option>
+          <option value="10+">10 ans et +</option>
+        </select>
+        <input type="text" name="club" placeholder="Club ou structure" required />
+        <textarea name="message" placeholder="Parlez-nous de vos joueurs et de vos attentes" required></textarea>
+        <button class="btn btn--gold" type="submit">Envoyer ma candidature</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="contact-modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" hidden>
+    <div class="contact-modal__overlay" data-close-contact></div>
+    <div class="contact-modal__content">
+      <button class="contact-modal__close" type="button" data-close-contact aria-label="Fermer le formulaire">
+        ×
+      </button>
+      <h2 id="contactTitle">Contact Tennis Impact</h2>
+      <p>Présentez votre profil ou posez vos questions, nous revenons vers vous sous 24h.</p>
+      <form id="contactForm" class="contact-form">
+        <label for="contactName">Nom complet</label>
+        <input id="contactName" name="name" type="text" placeholder="Votre nom" required />
+
+        <label for="contactEmail">Email</label>
+        <input id="contactEmail" name="email" type="email" placeholder="Votre email" required />
+
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" rows="4" placeholder="Expliquez votre demande"></textarea>
+
+        <button type="submit" class="btn btn--gold btn--full">Envoyer</button>
+      </form>
+      <p class="contact-modal__success" id="contactSuccess" hidden>Merci ! Votre message a bien été envoyé.</p>
     </div>
   </div>
-</section>
 
-<section id="formulaire-coach" style="background:#0c2340; padding:60px 20px;">
-  <div style="max-width:800px; margin:0 auto; color:white;">
-    <h2 style="text-align:center; margin-bottom:30px;">Formulaire de Contact – Espace Coach</h2>
-    <form id="coachForm" style="display:grid; gap:20px;" onsubmit="event.preventDefault(); alert('Votre demande a bien été envoyée.');">
-      <input type="text" placeholder="Nom / Prénom" required style="padding:15px; border:none; border-radius:8px;">
-      <input type="email" placeholder="Adresse email" required style="padding:15px; border:none; border-radius:8px;">
-      <input type="tel" placeholder="Téléphone" required style="padding:15px; border:none; border-radius:8px;">
-      <textarea placeholder="Expliquez votre démarche ou demande" rows="5" required style="padding:15px; border:none; border-radius:8px;"></textarea>
-      <button type="submit" style="padding:15px; background:#c9a33c; color:white; border:none; border-radius:30px; font-size:1.1em;">Envoyer</button>
-    </form>
-  </div>
-</section>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const coachForm = document.getElementById('coachForm');
+    const contactModal = document.getElementById('contactModal');
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccess');
 
+    function closeNav() {
+      if (mainNav.classList.contains('is-open')) {
+        mainNav.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+        navToggle?.setAttribute('aria-expanded', 'false');
+      }
+    }
 
-<div style="text-align:center; margin-top:60px;">
-  
-</div>
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll', !expanded);
+    });
 
+    mainNav?.querySelectorAll('a, button').forEach(link => {
+      link.addEventListener('click', () => {
+        closeNav();
+      });
+    });
+
+    function openContact() {
+      closeNav();
+      contactModal.hidden = false;
+      requestAnimationFrame(() => {
+        contactModal.classList.add('is-visible');
+        document.body.classList.add('no-scroll');
+      });
+    }
+
+    function closeContact() {
+      contactModal.classList.remove('is-visible');
+      document.body.classList.remove('no-scroll');
+      setTimeout(() => {
+        contactModal.hidden = true;
+        contactSuccess.hidden = true;
+        contactForm.reset();
+      }, 300);
+    }
+
+    document.querySelectorAll('[data-open-contact]').forEach(btn =>
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        openContact();
+      })
+    );
+
+    contactModal.querySelectorAll('[data-close-contact]').forEach(btn => btn.addEventListener('click', closeContact));
+
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      contactSuccess.hidden = false;
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && contactModal.classList.contains('is-visible')) {
+        closeContact();
+      }
+    });
+
+    coachForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Merci ! Nous vous recontactons très vite.');
+      coachForm.reset();
+    });
+  </script>
 </body>
 </html>
