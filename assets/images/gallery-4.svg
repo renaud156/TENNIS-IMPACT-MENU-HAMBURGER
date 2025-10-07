@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#142c45"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f9d65c"/>
+      <stop offset="100%" stop-color="#d9a600"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="36" fill="url(#bg)"/>
+  <g fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8">
+    <rect x="120" y="120" width="560" height="360" rx="28"/>
+    <line x1="400" y1="120" x2="400" y2="480"/>
+    <line x1="120" y1="300" x2="680" y2="300"/>
+  </g>
+  <g transform="translate(220,180)">
+    <circle cx="260" cy="140" r="96" fill="url(#accent)"/>
+    <path d="M220 80c40 50 40 150 0 200" fill="none" stroke="#0d1b2a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M300 80c-40 50-40 150 0 200" fill="none" stroke="#0d1b2a" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <text x="50%" y="520" text-anchor="middle" font-size="48" font-family="'Poppins',sans-serif" fill="#f9d65c" font-weight="600">Tennis Impact Experience</text>
+</svg>
