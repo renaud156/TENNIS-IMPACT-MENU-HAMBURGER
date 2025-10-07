@@ -21,16 +21,20 @@
         <span></span>
         <span></span>
       </button>
-      <nav class="navbar__links" id="mainNav">
-        <a href="#academie" class="nav-link">Notre académie</a>
-        <a href="#stages" class="nav-link">Stages jeunes</a>
-        <a href="#lecons" class="nav-link">Leçons individuelles</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#galerie" class="nav-link">Galerie</a>
-        <div class="navbar__cta">
-          <a class="btn btn--ghost" href="espace_coach.html">Espace coach</a>
-          <button class="btn btn--gold" data-open-contact>Contact</button>
-        </div>
+      <nav class="navbar__links" id="mainNav" aria-label="Navigation principale">
+        <ul class="navbar__menu">
+          <li><a href="#academie" class="nav-link">Notre académie</a></li>
+          <li><a href="#stages" class="nav-link">Stages jeunes</a></li>
+          <li><a href="#lecons" class="nav-link">Leçons individuelles</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#galerie" class="nav-link">Galerie</a></li>
+          <li><a href="espace_coach.html" class="nav-link">Espace coach</a></li>
+          <li>
+            <button class="nav-link nav-link--cta" type="button" data-open-contact>
+              Contact
+            </button>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -46,7 +50,10 @@
         </p>
         <div class="hero__actions">
           <a class="btn btn--gold" href="reserver.html">Réserver un stage</a>
-          <a class="btn btn--ghost" href="reservation_lecon.html">Planifier une leçon</a>
+          <a class="hero__link hero__link--light" href="reservation_lecon.html">
+            Planifier une leçon privée
+            <span class="hero__link-icon" aria-hidden="true">↗</span>
+          </a>
         </div>
         <div class="hero__badges" data-aos="fade-up" data-aos-delay="200">
           <div class="badge">
@@ -346,7 +353,7 @@
       body.classList.toggle('no-scroll', isOpen);
     });
 
-    nav.querySelectorAll('a').forEach(link => {
+    nav.querySelectorAll('a, button').forEach(link => {
       link.addEventListener('click', () => {
         if (nav.classList.contains('is-open')) {
           closeNav();
