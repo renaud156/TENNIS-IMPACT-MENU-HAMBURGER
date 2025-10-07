@@ -1,30 +1,316 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <title>Test Bouton Final</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leçons individuelles – Tennis Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f8f9fc;
+      color: var(--color-navy);
+    }
+
+    .sub-hero {
+      position: relative;
+      padding: 120px 0 80px;
+      background: linear-gradient(rgba(7, 17, 29, 0.82), rgba(7, 17, 29, 0.82)),
+        url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    .sub-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 4vw, 3.25rem);
+      margin-bottom: 1rem;
+    }
+
+    .sub-hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .pillar-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-card);
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .pillar-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem;
+    }
+
+    .package-card {
+      background: var(--color-white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .package-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .package-card .card__body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .package-card .card__price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-gold-dark);
+    }
+
+    .locations {
+      margin-top: 4.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .location-card {
+      border-radius: var(--radius-card);
+      background: var(--color-white);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .location-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .location-card .card__body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cta-banner {
+      margin: 5rem 0 3rem;
+      background: linear-gradient(120deg, rgba(249, 214, 92, 0.95), rgba(217, 166, 0, 0.95));
+      border-radius: var(--radius-large);
+      padding: clamp(2.5rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-heading);
+      color: var(--color-night);
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+    }
+
+    .cta-banner p {
+      color: rgba(5, 10, 15, 0.75);
+      max-width: 620px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar__links {
+        background: var(--color-night);
+      }
+    }
+  </style>
 </head>
 <body>
-<a href="index.html" style="position: fixed; top: 20px; left: 20px; background-color: #c9a33c; color: white; padding: 12px 20px; font-size: 0.95em; border-radius: 30px; text-decoration: none; z-index: 999999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background 0.3s ease;">← Retour à l’accueil</a>
-
-<header class="header">
-  <div class="container">
-    <div class="logo">
-      <img src="images/logo-tennis-impact-blanc.png" alt="Logo Tennis Impact">
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav" aria-label="Navigation principale">
+        <ul class="navbar__menu">
+          <li><a href="index.html#stages" class="nav-link">Stages jeunes</a></li>
+          <li>
+            <a href="lecon_individuelle.html" class="nav-link" aria-current="page">Leçons individuelles</a>
+          </li>
+          <li><a href="espace_coach.html" class="nav-link">Espace coach</a></li>
+          <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+          <li><a href="reserver.html" class="nav-link">Réserver un stage</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr" class="nav-link nav-link--cta">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#stages">Nos Stages</a></li>
-        <li><a href="#lecon">Leçon Individuelle</a></li>
-        <li><a href="#coach">Espace Coach</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
+  <main>
+    <section class="sub-hero">
+      <div class="container">
+        <p class="hero__subtitle">Coaching individuel premium</p>
+        <h1>Une progression accélérée avec un coach dédié</h1>
+        <p>
+          Chaque séance est construite sur-mesure en fonction de votre objectif : reprise du jeu, préparation d’un tournoi ou optimisation technique.
+          Nos coachs certifiés vous accompagnent dans le moindre détail.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="reservation_lecon.html">Réserver une leçon</a>
+          <a class="hero__link hero__link--light" href="#programme">
+            Découvrir le programme
+            <span class="hero__link-icon" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="pillars">
+          <div class="pillar-card">
+            <h3>Bilan technique filmé</h3>
+            <p>Analyse vidéo HD et plan d’actions prioritaire remis sous 48h.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Préparation mentale</h3>
+            <p>Routines et protocoles sur-mesure pour gagner en confiance.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Accompagnement physique</h3>
+            <p>Travail spécifique sur la mobilité, les appuis et la vitesse d’exécution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="programme">
+      <div class="container">
+        <span class="eyebrow">Formules 100% personnalisées</span>
+        <h2>Choisissez le format adapté à votre rythme</h2>
+        <div class="package-grid">
+          <article class="package-card">
+            <img src="assets/images/lecon-1.svg" alt="Session découverte" />
+            <div class="card__body">
+              <h3>Session découverte</h3>
+              <p class="card__price">45€ • 1h</p>
+              <p>Diagnostic complet et priorisation des axes de progression avec votre coach référent.</p>
+              <a class="btn btn--outline" href="reservation_lecon.html">Planifier</a>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="assets/images/lecon-2.svg" alt="Pack intensif 5h" />
+            <div class="card__body">
+              <h3>Pack intensif 5h</h3>
+              <p class="card__price">200€ • 5x1h</p>
+              <p>Progression rapide avec feedback vidéo, objectifs hebdomadaires et suivi précis.</p>
+              <a class="btn btn--outline" href="reservation_lecon.html">Planifier</a>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="assets/images/lecon-3.svg" alt="Pack performance" />
+            <div class="card__body">
+              <h3>Pack performance 10h</h3>
+              <p class="card__price">380€ • 10x1h</p>
+              <p>Coaching global : plan annuel, préparation mentale, accompagnement sur tournoi.</p>
+              <a class="btn btn--outline" href="reservation_lecon.html">Planifier</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__intro" data-aos="fade-up">
+          <span class="eyebrow eyebrow--light">Vos lieux d’entraînement</span>
+          <h2>Des sites d’exception à Paris et Colmar</h2>
+          <p>Choisissez votre terrain de jeu : ambiance légendaire à Paris ou écrin naturel en Alsace.</p>
+        </div>
+        <div class="locations">
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=1200&q=80" alt="Court de tennis à Paris" />
+            <div class="card__body">
+              <h3>Paris • Stade prestige</h3>
+              <p>Courts en terre battue inspirés de Roland-Garros, club-house premium et espaces bien-être.</p>
+              <p><strong>Disponibilités :</strong> 7j/7 de 7h à 22h.</p>
+            </div>
+          </article>
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Complexe de tennis à Colmar" />
+            <div class="card__body">
+              <h3>Colmar • Centre Tennis Europe</h3>
+              <p>Complexe couvert &amp; outdoor entouré de nature pour travailler technicité et relâchement.</p>
+              <p><strong>Disponibilités :</strong> Du lundi au samedi de 8h à 20h.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="container cta-banner">
+      <h2>Passez au niveau supérieur dès cette semaine</h2>
+      <p>Réservez votre première séance en choisissant Paris ou Colmar et nous vous rappelons sous 24h pour finaliser les détails logistiques.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="reservation_lecon.html">Je réserve ma leçon</a>
+        <a class="hero__link" href="mailto:contact@tennisimpact.fr">
+          Parler à un coach
+          <span class="hero__link-icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll', !expanded);
+    });
+
+    mainNav?.querySelectorAll('a, button').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('is-open')) {
+          mainNav.classList.remove('is-open');
+          document.body.classList.remove('no-scroll');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,88 +1,220 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<title>Réservation Leçon Individuelle – Tennis Impact</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation leçon individuelle – Tennis Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #fff;
-      padding: 40px 20px;
+      background: #f8f9fc;
       color: #001f3f;
+      margin: 0;
     }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #f0f0f0;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 20px;
-      font-weight: 600;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-top: 8px;
-    }
-    button {
-      margin-top: 30px;
-      background: #001f3f;
+
+    .booking-hero {
+      position: relative;
+      padding: 110px 0 80px;
+      background: linear-gradient(120deg, rgba(5, 10, 15, 0.82), rgba(13, 27, 42, 0.82)),
+        url('https://images.unsplash.com/photo-1532339142463-fd0a8979791a?auto=format&fit=crop&w=1800&q=80') center/cover;
       color: #fff;
-      border: none;
-      padding: 12px 20px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
+      text-align: center;
+    }
+
+    .booking-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      margin-bottom: 1rem;
+    }
+
+    .booking-hero p {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .reservation-card {
+      max-width: 720px;
+      margin: -60px auto 60px;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(5, 10, 15, 0.18);
+      padding: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .reservation-card h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+    }
+
+    .reservation-card form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .reservation-card label {
+      font-weight: 600;
+      display: block;
+    }
+
+    .reservation-card input,
+    .reservation-card select,
+    .reservation-card textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(13, 27, 42, 0.15);
+      font-size: 0.95rem;
+      background: rgba(248, 249, 252, 0.9);
+    }
+
+    .reservation-card textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .reservation-card .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .reservation-card button {
+      margin-top: 1.5rem;
+      align-self: start;
+    }
+
+    .info-banner {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      text-align: center;
+      color: rgba(13, 27, 42, 0.7);
     }
   </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav" aria-label="Navigation principale">
+        <ul class="navbar__menu">
+          <li><a href="stages_jeunes.html" class="nav-link">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a></li>
+          <li><a href="espace_coach.html" class="nav-link">Espace coach</a></li>
+          <li><a href="reserver.html" class="nav-link">Réserver un stage</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr" class="nav-link nav-link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div style="position: absolute; top: 20px; left: 20px; z-index: 9999;">
-  <a href="index.html" class="btn-retour" style="padding: 10px 20px; background-color: #FFD700; color: black; font-weight: bold; border-radius: 5px; text-decoration: none;">← Retour à l'accueil</a>
-</div>
+  <section class="booking-hero">
+    <div class="container">
+      <p class="hero__subtitle">Coaching individuel premium</p>
+      <h1>Réservez votre leçon privée</h1>
+      <p>Sélectionnez votre coach et votre ville préférée – Paris ou Colmar – puis choisissez la date idéale. Notre équipe vous confirme la séance sous 12h.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#formulaire">Planifier maintenant</a>
+        <a class="hero__link hero__link--light" href="mailto:contact@tennisimpact.fr">
+          Parler à un coach
+          <span class="hero__link-icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<section style="position: relative; width: 100%; height: 380px; background: url('assets/photos/2.png') center/cover no-repeat; display: flex; align-items: center; justify-content: center;">
-<div style="background-color: rgba(0,0,0,0.55); padding: 40px; border-radius: 12px; color: white; text-align: center;">
-<h1 style="font-size: 2.5rem; margin: 0;">Réservez votre leçon</h1>
-<h2 style="font-size: 1.6rem; font-weight: 300;">Un coaching individuel avec nos meilleurs entraîneurs</h2>
-<p style="margin-top: 10px; font-size: 1rem;">Académie Tennis Impact</p>
-</div>
-</section>
+  <main class="reservation-card" id="formulaire">
+    <h2>Informations de réservation</h2>
+    <form id="lessonForm">
+      <div class="form-row">
+        <div>
+          <label for="fullName">Nom complet</label>
+          <input id="fullName" name="fullName" type="text" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="date">Date souhaitée</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div>
+          <label for="time">Heure souhaitée</label>
+          <input id="time" name="time" type="time" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="location">Lieu de la leçon</label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Choisissez votre site</option>
+            <option value="paris">Paris – Stade prestige</option>
+            <option value="colmar">Colmar – Centre Tennis Europe</option>
+          </select>
+        </div>
+        <div>
+          <label for="level">Niveau de jeu</label>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="debutant">Débutant</option>
+            <option value="intermediaire">Intermédiaire</option>
+            <option value="avance">Avancé / Compétition</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="details">Objectifs &amp; besoins</label>
+        <textarea id="details" name="details" placeholder="Décrivez vos axes de progression, préférences de coach, besoins spécifiques"></textarea>
+      </div>
+      <button class="btn btn--gold" id="pay-btn" type="submit">Valider ma demande</button>
+    </form>
+  </main>
 
-<h1>Réservez votre leçon individuelle</h1>
-<form>
-<label>Nom complet</label>
-<input required="" type="text"/>
-<label>Date souhaitée</label>
-<input required="" type="date"/>
-<label>Heure souhaitée</label>
-<input required="" type="time"/>
-<label>Niveau de jeu</label>
-<select required="">
-<option>Débutant</option>
-<option>Intermédiaire</option>
-<option>Avancé</option>
-</select>
-<button id="pay-btn" style="margin-top: 30px;">Valider et Payer</button>
+  <div class="info-banner">
+    <p>Après validation, un coach Tennis Impact vous contacte pour confirmer le créneau et finaliser le paiement sécurisé.</p>
+  </div>
 
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const lessonForm = document.getElementById('lessonForm');
 
-</form>
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll', !expanded);
+    });
 
-<script src="https://js.stripe.com/v3/"></script>
-<script src="elements.js"></script>
+    mainNav?.querySelectorAll('a, button').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('is-open')) {
+          mainNav.classList.remove('is-open');
+          document.body.classList.remove('no-scroll');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
 
-<div style="text-align:center; margin-top: 40px;">
-  <a href="index.html" class="btn-retour" style="padding: 10px 20px; background-color: #FFD700; color: black; font-weight: bold; border-radius: 5px; text-decoration: none;">← Retour à l'accueil</a>
-</div>
-
+    lessonForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Merci ! Votre coach Tennis Impact vous contactera sous 12h.');
+      lessonForm.reset();
+    });
+  </script>
 </body>
 </html>
