@@ -72,13 +72,21 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0.9rem 1.6rem;
-  font-size: 0.95rem;
+  padding: 1rem 1.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
   border-radius: 999px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), color var(--transition-base);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 214, 92, 0.35);
 }
 
 .btn--gold {
@@ -94,9 +102,9 @@ ul {
 }
 
 .btn--ghost {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: var(--color-white);
-  background: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .btn--outline {
@@ -244,6 +252,64 @@ ul {
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.82);
   margin-bottom: 2rem;
+}
+
+.hero__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+}
+
+.hero__pillar {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 1.4rem 1.6rem 1.6rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.hero__pillar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(249, 214, 92, 0.7), rgba(255, 255, 255, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hero__pillar:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249, 214, 92, 0.55);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero__pillar:hover::before {
+  opacity: 1;
+}
+
+.hero__pillar-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-gold);
+  letter-spacing: 0.5px;
+}
+
+.hero__pillar-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.5;
 }
 
 .hero__actions {
@@ -765,6 +831,16 @@ ul {
 
   .hero__actions {
     justify-content: center;
+  }
+
+  .hero__pillars {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .hero__pillar {
+    text-align: left;
   }
 
   .hero__badges {
