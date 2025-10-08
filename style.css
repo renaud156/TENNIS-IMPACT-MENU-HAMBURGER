@@ -209,115 +209,65 @@ ul {
 
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: grid;
+  min-height: 90vh;
+  display: flex;
   align-items: center;
-  color: var(--color-white);
-  padding: 6rem 0 5rem;
-  overflow: hidden;
-}
-
-.hero__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(7, 17, 29, 0.78), rgba(17, 41, 68, 0.58));
-  z-index: -1;
+  padding: clamp(5rem, 12vw, 8rem) 0 clamp(4rem, 10vw, 7rem);
+  background: linear-gradient(135deg, #f8fbff 0%, #fff8e6 100%);
+  color: var(--color-navy);
 }
 
 .hero__content {
-  position: relative;
-  z-index: 1;
-  max-width: 720px;
+  width: min(680px, 100%);
 }
 
 .hero__subtitle {
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.85rem;
+  letter-spacing: 0.4rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(249, 214, 92, 0.8);
+  color: rgba(13, 27, 42, 0.6);
   margin-bottom: 1.5rem;
 }
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 4vw, 3.8rem);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+  color: var(--color-navy);
 }
 
 .hero__description {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 2rem;
+  color: rgba(13, 27, 42, 0.74);
+  margin-bottom: clamp(1.8rem, 5vw, 2.4rem);
+  max-width: 38rem;
 }
 
 .hero__pillars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2.5rem;
+  gap: 1.4rem;
+  margin-bottom: clamp(2.2rem, 6vw, 3rem);
+  padding-left: 1.4rem;
+  border-left: 3px solid rgba(249, 214, 92, 0.55);
+  max-width: 460px;
 }
 
 .hero__pillar {
-  position: relative;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
-  padding: 1.4rem 1.6rem 1.6rem;
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
-}
-
-.hero__pillar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(140deg, rgba(249, 214, 92, 0.7), rgba(255, 255, 255, 0));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.hero__pillar:hover {
-  transform: translateY(-6px);
-  border-color: rgba(249, 214, 92, 0.55);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.hero__pillar:hover::before {
-  opacity: 1;
+  display: grid;
+  gap: 0.35rem;
 }
 
 .hero__pillar-title {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-gold);
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .hero__pillar-text {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.5;
+  color: rgba(13, 27, 42, 0.65);
+  font-size: 0.98rem;
 }
 
 .hero__actions {
@@ -325,36 +275,8 @@ ul {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
 }
 
-.hero__badges {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.badge {
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 1rem 1.4rem;
-  min-width: 150px;
-  text-align: center;
-}
-
-.badge__title {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-gold);
-}
-
-.badge__text {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.76);
-}
 
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0;
@@ -836,6 +758,11 @@ ul {
 
   .hero {
     text-align: center;
+    justify-content: center;
+  }
+
+  .hero__content {
+    margin: 0 auto;
   }
 
   .hero__actions {
@@ -843,17 +770,10 @@ ul {
   }
 
   .hero__pillars {
-    margin-left: auto;
-    margin-right: auto;
+    border-left: none;
+    padding-left: 0;
+    margin-inline: auto;
     text-align: left;
-  }
-
-  .hero__pillar {
-    text-align: left;
-  }
-
-  .hero__badges {
-    justify-content: center;
   }
 
   .section__content p {
@@ -880,12 +800,11 @@ ul {
   }
 
   .hero__description {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
   }
 
-  .badge {
-    min-width: 120px;
-    padding: 0.9rem 1.1rem;
+  .hero__pillars {
+    gap: 1.1rem;
   }
 
   .card__body {
