@@ -28,7 +28,7 @@
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#galerie" class="nav-link">Galerie</a>
         <div class="navbar__cta">
-          <a class="btn btn--ghost" href="espace_coach.html">Espace coach</a>
+          <a class="btn btn--outline" href="espace_coach.html">Espace coach</a>
           <button class="btn btn--gold" data-open-contact>Contact</button>
         </div>
       </nav>
@@ -37,44 +37,40 @@
 
   <main>
     <section class="hero" id="hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-illustration.svg" aria-hidden="true">
+        <source src="https://cdn.coverr.co/videos/coverr-tennis-match-9122/1080p.mp4" type="video/mp4" />
+        Votre navigateur ne prend pas en charge la vidéo en arrière-plan.
+      </video>
       <div class="container hero__content" data-aos="fade-up">
-        <p class="hero__subtitle">Académie de tennis haute performance</p>
-        <h1>Performance, plaisir et excellence à chaque échange</h1>
-        <p class="hero__description">
-          Programmes signature, staff d'élite et service concierge : Tennis Impact sublime votre jeu avec un accompagnement
-          sur-mesure et une attention à chaque détail.
-        </p>
-        <ul class="hero__pillars" aria-label="Les trois piliers Tennis Impact">
-          <li class="hero__pillar">
-            <span class="hero__pillar-title">Performance</span>
-            <p class="hero__pillar-text">Méthodologie data-driven, ateliers tactiques et préparation physique intégrée.</p>
-          </li>
-          <li class="hero__pillar">
-            <span class="hero__pillar-title">Plaisir</span>
-            <p class="hero__pillar-text">Séances immersives, rythme adapté et ambiance inspirante pour garder le sourire.</p>
-          </li>
-          <li class="hero__pillar">
-            <span class="hero__pillar-title">Signature</span>
-            <p class="hero__pillar-text">Service premium, attention aux détails et suivi continu sur et en dehors du court.</p>
-          </li>
-        </ul>
+        <span class="hero__eyebrow">Tennis Impact Académie</span>
+        <h1>Une expérience d’entraînement unique.</h1>
+        <p class="hero__description">Entraînements sur mesure, staff d’élite et attention à chaque détail.</p>
         <div class="hero__actions">
-          <a class="btn btn--gold" href="reserver.html">Réserver un stage</a>
-          <a class="btn btn--ghost" href="reservation_lecon.html">Planifier une leçon</a>
+          <a class="btn btn--gold" href="reserver.html">Réserver</a>
+          <a class="btn btn--ghost" href="#stages">Découvrir les programmes</a>
         </div>
-        <div class="hero__badges" data-aos="fade-up" data-aos-delay="200">
-          <div class="badge">
-            <span class="badge__title">100+</span>
-            <span class="badge__text">joueurs accompagnés</span>
-          </div>
-          <div class="badge">
-            <span class="badge__title">15 ans</span>
-            <span class="badge__text">d'expérience coaching</span>
-          </div>
-          <div class="badge">
-            <span class="badge__title">100% perso</span>
-            <span class="badge__text">programmes individualisés</span>
-          </div>
+      </div>
+    </section>
+
+    <section class="pillars" aria-labelledby="pillars-title">
+      <div class="container" data-aos="fade-up">
+        <h2 id="pillars-title" class="sr-only">Les piliers Tennis Impact</h2>
+        <div class="pillars__grid">
+          <article class="pillar-card">
+            <span class="pillar-card__eyebrow">Pilier</span>
+            <h3 class="pillar-card__title">Performance</h3>
+            <p class="pillar-card__text">Coaching pointu, analyses vidéo et préparation physique intégrée pour révéler le meilleur de votre jeu.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-card__eyebrow">Pilier</span>
+            <h3 class="pillar-card__title">Plaisir</h3>
+            <p class="pillar-card__text">Expérience immersive, ambiance inspirante et rythme adapté pour savourer chaque échange.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-card__eyebrow">Pilier</span>
+            <h3 class="pillar-card__title">Excellence</h3>
+            <p class="pillar-card__text">Service premium, suivi attentif et exigence des détails pour une progression durable et élégante.</p>
+          </article>
         </div>
       </div>
     </section>
