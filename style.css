@@ -265,6 +265,7 @@ ul {
   max-width: 40rem;
 }
 
+ codex/remove-cartridges-from-homepage-1bcp10
 .hero__pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -316,6 +317,27 @@ ul {
   margin: 0;
 }
 
+
+.hero__pillars-text {
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 48rem;
+}
+
+.hero__pillars-text p {
+  margin: 0;
+}
+
+.hero__pillars-highlight {
+  font-weight: 600;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+ main
 .hero__actions {
   display: flex;
   align-items: center;
@@ -982,6 +1004,7 @@ ul {
     justify-content: center;
   }
 
+codex/remove-cartridges-from-homepage-1bcp10
   .hero__proofs {
     justify-content: center;
   }
@@ -990,6 +1013,14 @@ ul {
     margin-inline: auto;
     text-align: left;
     max-width: 520px;
+
+  .hero__pillars-text {
+    text-align: center;
+  }
+
+  .hero__badges {
+    justify-content: center;
+ main
   }
 
   .section__content p {
