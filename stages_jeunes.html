@@ -625,6 +625,237 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Formulaire envoyé !");
         closeForm();
       }, 1000);
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav">
+        <a href="index.html#academie" class="nav-link">Notre académie</a>
+        <a href="stages_jeunes.html" class="nav-link" aria-current="page">Stages jeunes</a>
+        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
+        <a href="espace_coach.html" class="nav-link">Espace coach</a>
+        <div class="navbar__cta">
+          <a class="btn btn--ghost" href="lecon_individuelle.html">Réserver une leçon</a>
+          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="stage-hero">
+      <div class="container">
+        <p class="hero__subtitle">Immersion haute intensité</p>
+        <h1>Stages jeunes Tennis Impact</h1>
+        <p>Des programmes premium pour révéler les talents de 8 à 18 ans. Coaching d’excellence, préparation physique, suivi mental et moments de cohésion inoubliables.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="reserver.html">Réserver un stage</a>
+          <a class="btn btn--ghost" href="#programme">Découvrir les formats</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programme">
+      <div class="container">
+        <span class="eyebrow">Nos formats signature</span>
+        <h2>Un stage adapté au profil de chaque joueur</h2>
+        <div class="stage-grid">
+          <article class="stage-card">
+            <img src="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?auto=format&fit=crop&w=1200&q=80" alt="Stage intensif Tennis Impact" />
+            <div class="card__body">
+              <h3>Stage Intensif Performance</h3>
+              <p><strong>1 semaine • 2 entraînements / jour</strong></p>
+              <ul>
+                <li>Analyse vidéo quotidienne et coaching mental.</li>
+                <li>Préparation physique ciblée + récupération.</li>
+                <li>Rapport individualisé et plan d’objectifs.</li>
+              </ul>
+              <a class="btn btn--outline" href="reserver.html">Je réserve</a>
+            </div>
+          </article>
+          <article class="stage-card">
+            <img src="https://images.unsplash.com/photo-1527490087278-9c75becc5a5d?auto=format&fit=crop&w=1200&q=80" alt="Stage multisport Tennis Impact" />
+            <div class="card__body">
+              <h3>Stage Multisport Excellence</h3>
+              <p><strong>5 jours • Tennis &amp; activités complémentaires</strong></p>
+              <ul>
+                <li>Ateliers tactiques, team building et nutrition.</li>
+                <li>Session mentale quotidienne en petit groupe.</li>
+                <li>Option hébergement premium sur site.</li>
+              </ul>
+              <a class="btn btn--outline" href="reserver.html">Je réserve</a>
+            </div>
+          </article>
+          <article class="stage-card">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80" alt="Stage compétition Tennis Impact" />
+            <div class="card__body">
+              <h3>Tournée &amp; Coaching Tournois</h3>
+              <p><strong>10 jours • Tournois FFT &amp; UTR</strong></p>
+              <ul>
+                <li>Accompagnement complet sur chaque match.</li>
+                <li>Préparation mentale et routines d’avant match.</li>
+                <li>Débriefing stratégique quotidien.</li>
+              </ul>
+              <a class="btn btn--outline" href="reserver.html">Je réserve</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="destinations">
+      <div class="container">
+        <div class="section__intro">
+          <span class="eyebrow eyebrow--light">Destinations premium</span>
+          <h2>Des cadres inspirants pour performer</h2>
+          <p>Nos partenaires nous permettent d’accueillir vos enfants sur des sites d’exception en France.</p>
+        </div>
+        <div class="location-grid">
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Hostens" />
+            <div class="card__body">
+              <h3>Hostens • Nature &amp; sérénité</h3>
+              <p>En plein cœur des Landes, idéal pour allier intensité et récupération au bord du lac.</p>
+              <p><strong>Points forts :</strong> hébergement premium &amp; activités outdoor.</p>
+            </div>
+          </article>
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80" alt="CREPS Poitiers" />
+            <div class="card__body">
+              <h3>Poitiers • CREPS Haute Performance</h3>
+              <p>Complexe indoor/outdoor, staff médical et espaces de récupération à disposition.</p>
+              <p><strong>Points forts :</strong> suivi scientifique &amp; tournoi Futuroscope.</p>
+            </div>
+          </article>
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80" alt="Aix-en-Provence" />
+            <div class="card__body">
+              <h3>Aix-en-Provence • Soleil &amp; intensité</h3>
+              <p>Climat idéal, surfaces variées, immersion totale pour viser la compétition.</p>
+              <p><strong>Points forts :</strong> programme double tennis &amp; français.</p>
+            </div>
+          </article>
+          <article class="location-card">
+            <img src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80" alt="Cabourg" />
+            <div class="card__body">
+              <h3>Cabourg • Littoral élite</h3>
+              <p>Atmosphère bord de mer pour conjuguer exigence sportive et moment détente.</p>
+              <p><strong>Points forts :</strong> sessions night sessions &amp; golf.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container section__grid">
+        <div class="section__content">
+          <span class="eyebrow">Une journée type</span>
+          <h2>Un rythme structuré pour maximiser la progression</h2>
+          <p>Chaque stage suit un fil conducteur précis et adapté au profil du joueur pour garantir une progression tangible.</p>
+          <div class="timeline">
+            <div class="timeline-step">
+              <strong>08h30</strong>
+              <div>
+                <h3>Échauffement collectif</h3>
+                <p>Mobilité, appuis et activation avec notre préparateur physique.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <strong>10h00</strong>
+              <div>
+                <h3>Bloc technique &amp; tactique</h3>
+                <p>Ateliers ciblés, travail vidéo et routines individuelles.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <strong>14h00</strong>
+              <div>
+                <h3>Matchs dirigés</h3>
+                <p>Situations de compétition coachées avec retours en direct.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <strong>17h00</strong>
+              <div>
+                <h3>Récupération &amp; mental</h3>
+                <p>Débriefing, préparation mentale, cryothérapie ou ateliers bien-être.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section__visual">
+          <img src="assets/images/stage-2.svg" alt="Illustration stage tennis" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container cta-banner">
+      <h2>Prêt à vivre l’expérience Tennis Impact ?</h2>
+      <p>Nos conseillers reviennent vers vous sous 24h pour construire un stage sur-mesure et réserver votre hébergement premium.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="reserver.html">Réserver maintenant</a>
+        <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Échanger avec un expert</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
+
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
     });
   }
 });

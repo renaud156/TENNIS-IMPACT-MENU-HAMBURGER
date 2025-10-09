@@ -205,6 +205,213 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Formulaire envoyé !");
         closeForm();
       }, 1000);
+    .contact-banner {
+      margin: 5rem 0 3rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav">
+        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
+        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
+        <a href="espace_coach.html" class="nav-link">Espace coach</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <div class="navbar__cta">
+          <a class="btn btn--ghost" href="lecon_individuelle.html">Réserver une leçon</a>
+          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="booking-hero">
+      <div class="container">
+        <p class="hero__subtitle">Parcours d’excellence</p>
+        <h1>Réservez votre stage Tennis Impact</h1>
+        <p>Renseignez vos préférences de dates, le profil du joueur et nous reviendrons vers vous avec une proposition personnalisée incluant hébergement et services premium.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#devis">Construire mon devis</a>
+          <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un conseiller</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formules">
+      <div class="container">
+        <span class="eyebrow">Formules disponibles</span>
+        <h2>Des expériences pour tous les objectifs</h2>
+        <div class="stage-options">
+          <article class="option-card">
+            <h3>Performance Intensive</h3>
+            <p><strong>1 semaine • 1 600 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>2 sessions tennis quotidiennes + préparation physique.</li>
+              <li>Analyse vidéo, coaching mental et suivi nutrition.</li>
+              <li>Option tournoi FFT ou UTR en fin de stage.</li>
+            </ul>
+          </article>
+          <article class="option-card">
+            <h3>Immersion Multisport</h3>
+            <p><strong>5 jours • 1 050 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>1 entraînement tennis / jour + ateliers tactiques.</li>
+              <li>Activités complémentaires : golf, préparation mentale, yoga.</li>
+              <li>Sorties culturelles et team building premium.</li>
+            </ul>
+          </article>
+          <article class="option-card">
+            <h3>Tournée Compétition</h3>
+            <p><strong>10 jours • 4 200 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>Coaching sur matchs officiels, routines de performance.</li>
+              <li>Bilans quotidiens, récupération cryo &amp; soins kiné.</li>
+              <li>Suivi digital 30 jours après le stage.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="lieux">
+      <div class="container">
+        <div class="section__intro">
+          <span class="eyebrow eyebrow--light">Destinations 2024</span>
+          <h2>Choisissez votre écrin de performance</h2>
+          <p>Nos sites partenaires offrent un confort premium et des équipements haut de gamme.</p>
+        </div>
+        <div class="locations-grid">
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Hostens" />
+            <div class="card__body">
+              <h3>Hostens – Landes</h3>
+              <p>Nature préservée, lac privé, infrastructures haut de gamme pour un stage oxygénant.</p>
+              <p><strong>+ Hébergement premium disponible.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80" alt="Poitiers" />
+            <div class="card__body">
+              <h3>CREPS Poitiers</h3>
+              <p>Centre d’excellence avec salles de préparation physique, staff médical et restauration dédiée.</p>
+              <p><strong>+ Option Futuroscope incluse.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80" alt="Aix-en-Provence" />
+            <div class="card__body">
+              <h3>Aix-en-Provence</h3>
+              <p>Climat idéal, surfaces variées et programme tennis &amp; français pour une immersion complète.</p>
+              <p><strong>+ Hébergement en résidence 4★.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80" alt="Cabourg" />
+            <div class="card__body">
+              <h3>Cabourg</h3>
+              <p>Atmosphère littoral chic, night sessions, sorties bien-être et golf à proximité.</p>
+              <p><strong>+ Option famille disponible.</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="devis">
+      <div class="container booking-form">
+        <span class="eyebrow">Créons votre devis premium</span>
+        <h2>Partagez vos attentes, nous nous occupons du reste</h2>
+        <form id="bookingForm">
+          <input type="text" name="name" placeholder="Nom &amp; Prénom du joueur" required />
+          <input type="email" name="email" placeholder="Email du parent" required />
+          <input type="tel" name="phone" placeholder="Téléphone" required />
+          <select name="stage" required>
+            <option value="" disabled selected>Stage souhaité</option>
+            <option value="performance">Performance Intensive</option>
+            <option value="multisport">Immersion Multisport</option>
+            <option value="tournoi">Tournée Compétition</option>
+          </select>
+          <select name="destination" required>
+            <option value="" disabled selected>Destination préférée</option>
+            <option value="hostens">Hostens – Landes</option>
+            <option value="poitiers">CREPS Poitiers</option>
+            <option value="aix">Aix-en-Provence</option>
+            <option value="cabourg">Cabourg</option>
+          </select>
+          <input type="date" name="date" placeholder="Semaine souhaitée" required />
+          <textarea name="details" placeholder="Précisez le niveau de jeu, objectifs et besoins en hébergement"></textarea>
+          <button class="btn btn--gold" type="submit">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="container contact-banner">
+      <p>Besoin d’un accompagnement immédiat ? <a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a> • +33 6 00 00 00 00</p>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
+    const bookingForm = document.getElementById('bookingForm');
+
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
     });
   }
 });

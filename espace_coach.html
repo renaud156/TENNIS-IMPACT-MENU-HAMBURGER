@@ -151,6 +151,104 @@
 <div style="text-align:center; margin-top:60px;">
   
 </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__intro">
+          <span class="eyebrow eyebrow--light">Engagements Tennis Impact</span>
+          <h2>Un partenariat construit sur la confiance</h2>
+          <p>Nous investissons dans votre réussite avec un accompagnement marketing, juridique et sportif.</p>
+        </div>
+        <div class="engagement-grid">
+          <div class="engagement-card">
+            <h3>Suivi business dédié</h3>
+            <p>Tracking hebdomadaire des prospects et conversion assurée par notre équipe admissions.</p>
+          </div>
+          <div class="engagement-card">
+            <h3>Programme de fidélité</h3>
+            <p>Bonus exclusifs sur l’hébergement, invitations VIP et accès aux événements pros.</p>
+          </div>
+          <div class="engagement-card">
+            <h3>Communauté d’experts</h3>
+            <p>Workshops trimestriels, masterclass de préparation mentale et veille technique continue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-card" id="formulaire">
+      <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 0.5rem;">Candidatez en 2 minutes</h2>
+      <p style="color: rgba(255, 255, 255, 0.75); max-width: 520px;">Dites-nous en plus sur votre structure et vos objectifs : notre équipe vous recontacte sous 24h.</p>
+      <form class="form-grid" id="coachForm">
+        <input type="text" name="name" placeholder="Nom &amp; Prénom" required />
+        <input type="email" name="email" placeholder="Email professionnel" required />
+        <input type="tel" name="phone" placeholder="Téléphone" required />
+        <select name="experience" required>
+          <option value="" disabled selected>Expérience coaching</option>
+          <option value="-5">0 - 5 ans</option>
+          <option value="5-10">5 - 10 ans</option>
+          <option value="10+">10 ans et +</option>
+        </select>
+        <input type="text" name="club" placeholder="Club ou structure" required />
+        <textarea name="message" placeholder="Parlez-nous de vos joueurs et de vos attentes" required></textarea>
+        <button class="btn btn--gold" type="submit">Envoyer ma candidature</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
+    const coachForm = document.getElementById('coachForm');
+
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
 
 </body>
 </html>

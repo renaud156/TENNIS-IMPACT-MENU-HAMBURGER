@@ -83,6 +83,146 @@
 <div style="text-align:center; margin-top: 40px;">
   <a href="index.html" class="btn-retour" style="padding: 10px 20px; background-color: #FFD700; color: black; font-weight: bold; border-radius: 5px; text-decoration: none;">← Retour à l'accueil</a>
 </div>
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav">
+        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
+        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
+        <a href="espace_coach.html" class="nav-link">Espace coach</a>
+        <div class="navbar__cta">
+          <a class="btn btn--ghost" href="reserver.html">Réserver un stage</a>
+          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="booking-hero">
+    <div class="container">
+      <p class="hero__subtitle">Coaching individuel premium</p>
+      <h1>Réservez votre leçon privée</h1>
+      <p>Sélectionnez votre coach et votre ville préférée – Paris ou Colmar – puis choisissez la date idéale. Notre équipe vous confirme la séance sous 12h.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#formulaire">Planifier maintenant</a>
+        <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un coach</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="reservation-card" id="formulaire">
+    <h2>Informations de réservation</h2>
+    <form id="lessonForm">
+      <div class="form-row">
+        <div>
+          <label for="fullName">Nom complet</label>
+          <input id="fullName" name="fullName" type="text" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="date">Date souhaitée</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div>
+          <label for="time">Heure souhaitée</label>
+          <input id="time" name="time" type="time" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="location">Lieu de la leçon</label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Choisissez votre site</option>
+            <option value="paris">Paris – Stade prestige</option>
+            <option value="colmar">Colmar – Centre Tennis Europe</option>
+          </select>
+        </div>
+        <div>
+          <label for="level">Niveau de jeu</label>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="debutant">Débutant</option>
+            <option value="intermediaire">Intermédiaire</option>
+            <option value="avance">Avancé / Compétition</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="details">Objectifs &amp; besoins</label>
+        <textarea id="details" name="details" placeholder="Décrivez vos axes de progression, préférences de coach, besoins spécifiques"></textarea>
+      </div>
+      <button class="btn btn--gold" id="pay-btn" type="submit">Valider ma demande</button>
+    </form>
+  </main>
+
+  <div class="info-banner">
+    <p>Après validation, un coach Tennis Impact vous contacte pour confirmer le créneau et finaliser le paiement sécurisé.</p>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
+    const lessonForm = document.getElementById('lessonForm');
+
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
 
 </body>
 </html>
