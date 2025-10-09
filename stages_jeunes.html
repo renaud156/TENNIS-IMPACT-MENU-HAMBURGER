@@ -9,70 +9,83 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      background: #f6f7fb;
-      color: var(--color-navy);
-    }
-
     .stage-hero {
       position: relative;
       padding: 130px 0 90px;
-      background: linear-gradient(115deg, rgba(5, 10, 15, 0.85), rgba(13, 27, 42, 0.85)),
+      background:
+        linear-gradient(130deg, rgba(3, 9, 22, 0.92), rgba(7, 18, 42, 0.82)),
         url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1800&q=80') center/cover;
       color: var(--color-white);
     }
 
+    .stage-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(3, 9, 22, 0.35), rgba(3, 12, 28, 0.65));
+      pointer-events: none;
+    }
+
+    .stage-hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
     .stage-hero h1 {
       font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 4vw, 3.4rem);
+      font-size: clamp(2.6rem, 4.4vw, 3.6rem);
       margin-bottom: 1rem;
+      letter-spacing: 0.02em;
     }
 
     .stage-hero p {
-      max-width: 700px;
-      font-size: 1.1rem;
+      max-width: 720px;
+      font-size: 1.12rem;
+      line-height: 1.7;
       margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .stage-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 1.8rem;
       margin-top: 3rem;
     }
 
     .stage-card {
-      background: var(--color-white);
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(236, 242, 255, 0.9));
       border-radius: var(--radius-card);
-      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(16, 37, 65, 0.1);
+      box-shadow: 0 28px 56px rgba(3, 12, 26, 0.16);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      gap: 1.4rem;
+      padding: 1.9rem;
       transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
 
     .stage-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-strong);
+      transform: translateY(-10px);
+      box-shadow: 0 40px 100px rgba(3, 10, 26, 0.32);
     }
 
-    .stage-card img {
-      height: 210px;
-      object-fit: cover;
+    .stage-card__visual {
+      margin: 0;
+      aspect-ratio: 4 / 3;
     }
 
     .stage-card .card__body {
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
     }
 
     .stage-card ul {
       list-style: disc;
       padding-left: 1.2rem;
-      color: var(--color-grey-600);
-      line-height: 1.5;
+      color: rgba(16, 37, 65, 0.72);
+      line-height: 1.6;
     }
 
     .location-grid {
@@ -84,23 +97,30 @@
 
     .location-card {
       border-radius: var(--radius-card);
-      background: var(--color-white);
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(236, 242, 255, 0.9));
+      border: 1px solid rgba(16, 37, 65, 0.1);
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 26px 54px rgba(3, 12, 26, 0.18);
+      display: grid;
+      gap: 1.2rem;
+      padding: 1.7rem;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
 
-    .location-card img {
-      height: 200px;
-      object-fit: cover;
+    .location-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 36px 80px rgba(3, 10, 26, 0.28);
+    }
+
+    .location-card__visual {
+      margin: 0;
+      aspect-ratio: 4 / 3;
     }
 
     .location-card .card__body {
-      padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+      padding: 0;
+      display: grid;
+      gap: 0.9rem;
     }
 
     .timeline {
@@ -112,34 +132,37 @@
     .timeline-step {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 1rem;
+      gap: 1.1rem;
       align-items: flex-start;
-      background: rgba(5, 10, 15, 0.04);
-      padding: 1.4rem;
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.9), rgba(234, 240, 255, 0.75));
+      padding: 1.6rem 1.8rem;
       border-radius: var(--radius-card);
+      border: 1px solid rgba(16, 37, 65, 0.08);
+      box-shadow: 0 22px 48px rgba(3, 12, 26, 0.14);
     }
 
     .timeline-step strong {
-      font-size: 1.5rem;
-      color: var(--color-gold-dark);
+      font-size: 1.45rem;
+      color: var(--color-gold);
     }
 
     .cta-banner {
       margin: 5rem 0 3rem;
-      background: linear-gradient(120deg, rgba(249, 214, 92, 0.95), rgba(217, 166, 0, 0.95));
+      background: linear-gradient(125deg, rgba(246, 210, 90, 0.92), rgba(255, 247, 220, 0.92));
       border-radius: var(--radius-large);
-      padding: clamp(2.5rem, 5vw, 4rem);
+      padding: clamp(2.6rem, 5vw, 4.2rem);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.1rem;
       text-align: center;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 32px 70px rgba(3, 12, 26, 0.22);
     }
 
     .cta-banner p {
-      max-width: 680px;
-      color: rgba(5, 10, 15, 0.75);
+      max-width: 720px;
+      color: rgba(16, 37, 65, 0.72);
+      line-height: 1.65;
     }
   </style>
 </head>
@@ -186,7 +209,15 @@
         <h2>Un stage adapté au profil de chaque joueur</h2>
         <div class="stage-grid">
           <article class="stage-card">
-            <img src="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?auto=format&fit=crop&w=1200&q=80" alt="Stage intensif Tennis Impact" />
+            <figure class="stage-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?auto=format&fit=crop&w=1200&q=80"
+                alt="Stage intensif Tennis Impact"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Stage Intensif Performance</h3>
               <p><strong>1 semaine • 2 entraînements / jour</strong></p>
@@ -199,7 +230,15 @@
             </div>
           </article>
           <article class="stage-card">
-            <img src="https://images.unsplash.com/photo-1527490087278-9c75becc5a5d?auto=format&fit=crop&w=1200&q=80" alt="Stage multisport Tennis Impact" />
+            <figure class="stage-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1527490087278-9c75becc5a5d?auto=format&fit=crop&w=1200&q=80"
+                alt="Stage multisport Tennis Impact"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Stage Multisport Excellence</h3>
               <p><strong>5 jours • Tennis &amp; activités complémentaires</strong></p>
@@ -212,7 +251,15 @@
             </div>
           </article>
           <article class="stage-card">
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80" alt="Stage compétition Tennis Impact" />
+            <figure class="stage-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80"
+                alt="Stage compétition Tennis Impact"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Tournée &amp; Coaching Tournois</h3>
               <p><strong>10 jours • Tournois FFT &amp; UTR</strong></p>
@@ -237,7 +284,15 @@
         </div>
         <div class="location-grid">
           <article class="location-card">
-            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Hostens" />
+            <figure class="location-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80"
+                alt="Hostens"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Hostens • Nature &amp; sérénité</h3>
               <p>En plein cœur des Landes, idéal pour allier intensité et récupération au bord du lac.</p>
@@ -245,7 +300,15 @@
             </div>
           </article>
           <article class="location-card">
-            <img src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80" alt="CREPS Poitiers" />
+            <figure class="location-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80"
+                alt="CREPS Poitiers"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Poitiers • CREPS Haute Performance</h3>
               <p>Complexe indoor/outdoor, staff médical et espaces de récupération à disposition.</p>
@@ -253,7 +316,15 @@
             </div>
           </article>
           <article class="location-card">
-            <img src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80" alt="Aix-en-Provence" />
+            <figure class="location-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80"
+                alt="Aix-en-Provence"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Aix-en-Provence • Soleil &amp; intensité</h3>
               <p>Climat idéal, surfaces variées, immersion totale pour viser la compétition.</p>
@@ -261,7 +332,15 @@
             </div>
           </article>
           <article class="location-card">
-            <img src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80" alt="Cabourg" />
+            <figure class="location-card__visual visual-frame visual-frame--photo visual-frame--cover">
+              <img
+                src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80"
+                alt="Cabourg"
+                class="visual-frame__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
             <div class="card__body">
               <h3>Cabourg • Littoral élite</h3>
               <p>Atmosphère bord de mer pour conjuguer exigence sportive et moment détente.</p>
@@ -310,7 +389,9 @@
           </div>
         </div>
         <div class="section__visual">
-          <img src="assets/images/stage-2.svg" alt="Illustration stage tennis" />
+          <figure class="visual-frame visual-frame--wide">
+            <img src="assets/images/stage-2.svg" alt="Illustration stage tennis" class="visual-frame__image" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
     </section>
