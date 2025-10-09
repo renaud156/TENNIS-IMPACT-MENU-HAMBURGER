@@ -405,26 +405,47 @@
     const navToggle = document.getElementById('navToggle');
     const nav = document.getElementById('mainNav');
     const body = document.body;
+    const navLinks = nav ? Array.from(nav.querySelectorAll('a')) : [];
 
     function closeNav() {
+      if (!nav || !navToggle) return;
       nav.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
       body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
     }
 
-    navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      body.classList.toggle('no-scroll', isOpen);
-    });
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
 
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (nav.classList.contains('is-open')) {
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!nav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !nav.contains(event.target) && !navToggle.contains(event.target)) {
           closeNav();
         }
       });
-    });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && nav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
 
     const contactModal = document.getElementById('contactModal');
     const contactForm = document.getElementById('contactForm');
@@ -442,6 +463,7 @@
     function closeContact() {
       contactModal.classList.remove('is-visible');
       body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
       setTimeout(() => {
         contactModal.hidden = true;
         contactSuccess.hidden = true;
@@ -458,8 +480,12 @@
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && contactModal.classList.contains('is-visible')) {
-        closeContact();
+      if (event.key === 'Escape') {
+        if (nav?.classList.contains('is-open')) {
+          closeNav();
+        } else if (contactModal.classList.contains('is-visible')) {
+          closeContact();
+        }
       }
     });
 
