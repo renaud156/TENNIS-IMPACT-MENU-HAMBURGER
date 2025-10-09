@@ -241,13 +241,54 @@
   <script>
     const navToggle = document.getElementById('navToggle');
     const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
     const coachForm = document.getElementById('coachForm');
 
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll', !expanded);
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
     });
 
     coachForm?.addEventListener('submit', (event) => {
