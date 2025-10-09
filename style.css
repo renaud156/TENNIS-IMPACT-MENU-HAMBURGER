@@ -28,6 +28,7 @@ body {
   font-family: var(--font-body);
   color: var(--color-navy);
   background: #f5f7fb;
+  background: radial-gradient(circle at 12% 8%, #f5f8ff 0%, #ffffff 40%, #eef2f9 100%);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -99,6 +100,12 @@ ul {
   border-radius: clamp(1.6rem, 3vw, 2.2rem);
   background: linear-gradient(140deg, rgba(249, 214, 92, 0.28) 0%, rgba(249, 214, 92, 0.14) 28%, rgba(13, 27, 42, 0.08) 100%);
   box-shadow: 0 18px 50px rgba(13, 27, 42, 0.14);
+  place-items: center;
+  width: 100%;
+  padding: clamp(1.1rem, 2.6vw, 1.8rem);
+  border-radius: clamp(1.6rem, 3vw, 2.2rem);
+  background: linear-gradient(140deg, rgba(249, 214, 92, 0.35) 0%, rgba(249, 214, 92, 0.16) 28%, rgba(13, 27, 42, 0.08) 100%);
+  box-shadow: 0 26px 60px rgba(13, 27, 42, 0.16);
   overflow: hidden;
   isolation: isolate;
 }
@@ -134,6 +141,7 @@ ul {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  object-fit: contain;
   border-radius: clamp(1.2rem, 2.4vw, 1.8rem);
   filter: drop-shadow(0 18px 32px rgba(13, 27, 42, 0.18));
 }
@@ -155,6 +163,8 @@ ul {
 .visual-frame--photo {
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(233, 240, 250, 0.84));
   box-shadow: 0 24px 52px rgba(13, 27, 42, 0.14);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.92), rgba(233, 240, 250, 0.82));
+  box-shadow: 0 24px 52px rgba(13, 27, 42, 0.16);
 }
 
 .visual-frame--photo .visual-frame__image {
