@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Merci - Tennis Impact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merci – Tennis Impact Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .merci-container {
-      max-width: 600px;
-      margin: 120px auto;
-      background: #0D1B2A;
-      padding: 60px;
-      border-radius: 15px;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    h1 {
-      color: #FFD700;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    a {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background: #FFD700;
-      color: #0D1B2A;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
-  <div class="merci-container">
-    <h1>Merci pour votre réservation !</h1>
-    <p>Nous avons bien reçu votre demande de stage.<br>Notre équipe vous contactera rapidement.</p>
-    <a href="index.html">Retour à l'accueil</a>
-  </div>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Merci</span>
+            <h1 class="section__title">Votre demande a bien été envoyée</h1>
+            <p class="section__description">Notre équipe revient vers vous sous 24h pour confirmer votre réservation et finaliser les détails logistiques.</p>
+          </div>
+          <div class="page-hero__actions" style="justify-content:center;">
+            <a class="btn btn--primary" href="index.html">Retour à l’accueil</a>
+            <a class="btn btn--ghost" href="galerie.html">Découvrir le campus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

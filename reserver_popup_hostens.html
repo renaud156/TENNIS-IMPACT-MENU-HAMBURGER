@@ -1,169 +1,175 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hostens – Détail du stage Tennis Impact</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Stage Hostens – Tennis Impact Academy</title>
+  <meta name="description" content="Découvrez le stage premium Tennis Impact à Hostens : immersion nature, infrastructures privées et coaching haute intensité." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: #f6f7fb;
-      color: var(--color-navy);
-    }
-
-    .hostens-hero {
-      position: relative;
-      padding: 110px 0 80px;
-      background: linear-gradient(120deg, rgba(5, 10, 15, 0.82), rgba(13, 27, 42, 0.82)),
-        url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1800&q=80') center/cover;
-      color: var(--color-white);
-    }
-
-    .hostens-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      margin-bottom: 1rem;
-    }
-
-    .hostens-hero p {
-      max-width: 680px;
-      font-size: 1.1rem;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .info-card {
-      background: var(--color-white);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-soft);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .info-card img {
-      border-radius: var(--radius-card);
-    }
-
-    .program-list {
-      list-style: disc;
-      padding-left: 1.2rem;
-      color: var(--color-grey-600);
-      line-height: 1.5;
-    }
-
-    .cta-box {
-      margin-top: 3rem;
-      background: linear-gradient(120deg, rgba(249, 214, 92, 0.95), rgba(217, 166, 0, 0.95));
-      border-radius: var(--radius-large);
-      padding: clamp(2.5rem, 4vw, 3.5rem);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      color: var(--color-night);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .cta-box ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-    }
-  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar__container">
-      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
         <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
       </a>
-      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
         <span></span>
       </button>
-      <nav class="navbar__links" id="mainNav">
-        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
-        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
-        <a href="espace_coach.html" class="nav-link">Espace coach</a>
-        <div class="navbar__cta">
-          <a class="btn btn--ghost" href="reserver.html">Réserver un stage</a>
-          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+      <nav class="site-nav" id="primaryNav">
+        <a class="site-nav__link" href="index.html">Accueil</a>
+        <a class="site-nav__link" href="stages_jeunes.html">Stages</a>
+        <a class="site-nav__link" href="lecon_individuelle.html">Coaching privé</a>
+        <a class="site-nav__link" href="galerie.html">Galerie</a>
+        <div class="site-nav__cta">
+          <a class="btn btn--outline" href="reserver.html">Réserver</a>
+          <a class="btn btn--primary" href="reservation_lecon.html">Parler à un coach</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hostens-hero">
-      <div class="container">
-        <p class="hero__subtitle">Destination nature</p>
-        <h1>Stage premium Hostens – Landes</h1>
-        <p>Une immersion au cœur d’un domaine forestier avec lac privé, installations haut de gamme et staff dédié. Idéal pour conjuguer intensité et récupération.</p>
+    <section class="page-hero">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=2000&q=80" alt="Domaine forestier" />
+      </div>
+      <div class="shell page-hero__inner">
+        <div class="page-hero__text">
+          <span class="page-hero__preheading">Stage nature</span>
+          <h1 class="page-hero__title">Hostens Performance Retreat</h1>
+          <p class="page-hero__lede">Un stage intensif à 45 minutes de Bordeaux, entre forêt et lac privé, avec infrastructures exclusives et staff dédié.</p>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="reserver.html">Réserver ma place</a>
+            <a class="btn btn--ghost" href="#programme">Voir le programme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programme">
+      <div class="shell">
+        <div class="section__header">
+          <span class="eyebrow">Le lieu</span>
+          <h2 class="section__title">Un écrin naturel pour performer</h2>
+        </div>
+        <div class="split">
+          <div class="split__media">
+            <img src="https://images.unsplash.com/photo-1532332242445-0e4ee99c535b?auto=format&fit=crop&w=1200&q=80" alt="Lac d'Hostens" />
+          </div>
+          <div class="split__content">
+            <p>Le domaine d’Hostens offre 5 courts extérieurs neufs, une bulle indoor, salle de préparation physique, zone recovery (sauna, cryo, balnéo) et hébergement premium au bord du lac.</p>
+            <ul class="split__list">
+              <li><span class="split__list-icon">🏠</span>Résidence privée & pension complète</li>
+              <li><span class="split__list-icon">🌳</span>Cadre naturel pour séances outdoor & récupération active</li>
+              <li><span class="split__list-icon">🧖</span>Espace bien-être exclusif pour les joueurs</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container content-grid">
-        <article class="info-card">
-          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Site de Hostens" />
-          <div>
-            <h2>Infrastructures d’exception</h2>
-            <p>Courts extérieurs refaits à neuf, zone indoor, salle de préparation physique et espaces bien-être (sauna, cryo, balnéo).</p>
+      <div class="shell">
+        <div class="section__header">
+          <span class="eyebrow">Programme</span>
+          <h2 class="section__title">Une semaine signature Tennis Impact</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item">
+            <h4>Matin</h4>
+            <p>Tennis haute intensité, ateliers tactiques et travail ciblé par thèmes (service, retour, patterns offensifs).</p>
           </div>
-        </article>
-        <article class="info-card">
-          <h2>Programme type</h2>
-          <ul class="program-list">
-            <li>08h30 – Activation &amp; préparation mentale.</li>
-            <li>10h00 – Bloc technique intensif (vidéo + coach référent).</li>
-            <li>14h00 – Matchs dirigés &amp; stratégies de compétition.</li>
-            <li>17h00 – Récupération active, cryothérapie, yoga.</li>
-            <li>20h00 – Debrief collectif &amp; ateliers nutrition.</li>
-          </ul>
-          <p>Encadrement 24/7, ratio 1 coach pour 4 joueurs.</p>
-        </article>
-        <article class="info-card">
-          <h2>Hébergement &amp; services</h2>
-          <p>Chambres premium 2 ou 3 lits, restauration sportive personnalisée et sécurité assurée par notre équipe résidente.</p>
-          <p>Transferts gare de Bordeaux inclus. Options familiales sur demande.</p>
-        </article>
+          <div class="timeline__item">
+            <h4>Après-midi</h4>
+            <p>Matchs coachés, préparation physique individualisée et séances mental/performance.</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Soir</h4>
+            <p>Récupération active, session lac & mobilité, ateliers nutrition et briefing du lendemain.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="container cta-box">
-      <h2>Prêt à confirmer votre stage à Hostens ?</h2>
-      <p>Notre équipe revient vers vous sous 24h avec le planning détaillé et les modalités de réservation.</p>
-      <ul>
-        <li>1 600 € la semaine (hors hébergement) – hébergement premium : +520 €.</li>
-        <li>Option activités outdoor : paddle, trail, ateliers nature.</li>
-        <li>Support concierge dédié pour les familles.</li>
-      </ul>
-      <div class="hero__actions">
-        <a class="btn btn--gold" href="reserver.html">Réserver maintenant</a>
-        <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un conseiller</a>
+    <section class="section">
+      <div class="shell">
+        <div class="cta-panel" style="max-width:720px;margin-inline:auto;">
+          <div>
+            <span class="eyebrow">Tarif</span>
+            <h2>1290€ – tout inclus</h2>
+            <p>6 jours de coaching intensif, hébergement premium, restauration sportive et transports Bordeaux ↔ Hostens.</p>
+          </div>
+          <div class="page-hero__actions" style="justify-content:center;">
+            <a class="btn btn--primary" href="reserver.html">Bloquer ma place</a>
+            <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un conseiller</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
+  <footer class="site-footer">
+    <div class="shell site-footer__grid">
+      <div>
+        <div class="site-footer__brand">Tennis Impact Academy</div>
+        <p>Académie haute performance inspirée des standards Mouratoglou. Bordeaux & tournées internationales.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+33556000000">+33 (0)5 56 00 00 00</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a></li>
+          <li>14 avenue du Court Central · 33000 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programmes</h3>
+        <ul class="site-footer__list">
+          <li><a href="stages_jeunes.html">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html">Coaching privé</a></li>
+          <li><a href="notre-academie.html">Académie annuelle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ressources</h3>
+        <ul class="site-footer__list">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell site-footer__bottom">
+      <p>© <span id="currentYear"></span> Tennis Impact Academy. Tous droits réservés.</p>
+      <div>
+        <a href="politique-confidentialite.html">Confidentialité</a> ·
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
 
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll', !expanded);
+  <script>
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

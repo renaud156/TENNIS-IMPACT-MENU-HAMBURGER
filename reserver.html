@@ -1,315 +1,197 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Réserver un stage – Tennis Impact</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Réserver un stage – Tennis Impact Academy</title>
+  <meta name="description" content="Réservez un stage Tennis Impact : choisissez votre format, vos dates et bénéficiez d’un accompagnement premium." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: #f7f8fc;
-      color: var(--color-navy);
-    }
-
-    .booking-hero {
-      position: relative;
-      padding: 120px 0 80px;
-      background: linear-gradient(120deg, rgba(5, 10, 15, 0.82), rgba(13, 27, 42, 0.82)),
-        url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1800&q=80') center/cover;
-      color: var(--color-white);
-      text-align: center;
-    }
-
-    .booking-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.6rem, 4vw, 3.4rem);
-      margin-bottom: 1rem;
-    }
-
-    .booking-hero p {
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-    }
-
-    .stage-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .option-card {
-      background: var(--color-white);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-soft);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      border-top: 6px solid transparent;
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-    }
-
-    .option-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-strong);
-      border-top-color: var(--color-gold);
-    }
-
-    .option-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-    }
-
-    .option-card ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-      color: var(--color-grey-600);
-      line-height: 1.5;
-    }
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .location-tile {
-      background: var(--color-white);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .location-tile img {
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .location-tile .card__body {
-      padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .booking-form {
-      margin-top: 4rem;
-      background: var(--color-white);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow-soft);
-      padding: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .booking-form form {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .booking-form input,
-    .booking-form select,
-    .booking-form textarea {
-      width: 100%;
-      padding: 0.95rem 1.1rem;
-      border: 1px solid rgba(13, 27, 42, 0.12);
-      border-radius: 12px;
-      font-size: 0.95rem;
-      background: rgba(255, 255, 255, 0.96);
-    }
-
-    .booking-form textarea {
-      min-height: 140px;
-      grid-column: 1 / -1;
-      resize: vertical;
-    }
-
-    .booking-form button {
-      grid-column: 1 / -1;
-      justify-self: start;
-    }
-
-    .contact-banner {
-      margin: 5rem 0 3rem;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar__container">
-      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
         <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
       </a>
-      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
         <span></span>
       </button>
-      <nav class="navbar__links" id="mainNav">
-        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
-        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
-        <a href="espace_coach.html" class="nav-link">Espace coach</a>
-        <a href="index.html#faq" class="nav-link">FAQ</a>
-        <div class="navbar__cta">
-          <a class="btn btn--ghost" href="lecon_individuelle.html">Réserver une leçon</a>
-          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+      <nav class="site-nav" id="primaryNav">
+        <a class="site-nav__link" href="index.html">Accueil</a>
+        <a class="site-nav__link" href="notre-academie.html">Académie</a>
+        <a class="site-nav__link" href="stages_jeunes.html">Stages</a>
+        <a class="site-nav__link" href="lecon_individuelle.html">Coaching privé</a>
+        <a class="site-nav__link" href="galerie.html">Galerie</a>
+        <a class="site-nav__link" href="faq.html">FAQ</a>
+        <div class="site-nav__cta">
+          <a class="btn btn--outline" href="reservation_lecon.html">Coaching privé</a>
+          <a class="btn btn--primary" href="reserver.html">Réserver un stage</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="booking-hero">
-      <div class="container">
-        <p class="hero__subtitle">Parcours d’excellence</p>
-        <h1>Réservez votre stage Tennis Impact</h1>
-        <p>Renseignez vos préférences de dates, le profil du joueur et nous reviendrons vers vous avec une proposition personnalisée incluant hébergement et services premium.</p>
-        <div class="hero__actions">
-          <a class="btn btn--gold" href="#devis">Construire mon devis</a>
-          <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un conseiller</a>
+    <section class="page-hero">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1531168010536-64bc17b5d1df?auto=format&fit=crop&w=2000&q=80" alt="Court central premium" />
+      </div>
+      <div class="shell page-hero__inner">
+        <div class="page-hero__text">
+          <span class="page-hero__preheading">Réservation</span>
+          <h1 class="page-hero__title">Réservez votre expérience Tennis Impact</h1>
+          <p class="page-hero__lede">Complétez le formulaire pour bloquer vos dates. Notre équipe vous confirme la disponibilité sous 24h.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="formules">
-      <div class="container">
-        <span class="eyebrow">Formules disponibles</span>
-        <h2>Des expériences pour tous les objectifs</h2>
-        <div class="stage-options">
-          <article class="option-card">
-            <h3>Performance Intensive</h3>
-            <p><strong>1 semaine • 1 600 €</strong> (hors hébergement)</p>
+    <section class="section">
+      <div class="shell">
+        <div class="section__header">
+          <span class="eyebrow">Choisir son format</span>
+          <h2 class="section__title">Les programmes disponibles</h2>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="program-card__tag">Jeunes</span>
+            <h3>Impact Essentials</h3>
+            <p>Idéal pour consolider les fondamentaux et vivre une première immersion.</p>
             <ul>
-              <li>2 sessions tennis quotidiennes + préparation physique.</li>
-              <li>Analyse vidéo, coaching mental et suivi nutrition.</li>
-              <li>Option tournoi FFT ou UTR en fin de stage.</li>
+              <li>5 jours • 20h d’entraînement</li>
+              <li>Atelier mental & nutrition</li>
+              <li>Bilan personnalisé envoyé sous 72h</li>
             </ul>
+            <div class="program-card__footer">
+              <span class="program-card__price">690€</span>
+              <span>Places restantes : 4</span>
+            </div>
           </article>
-          <article class="option-card">
-            <h3>Immersion Multisport</h3>
-            <p><strong>5 jours • 1 050 €</strong> (hors hébergement)</p>
+          <article class="program-card">
+            <span class="program-card__tag">Performance</span>
+            <h3>Impact Elite</h3>
+            <p>Format intensif pour joueurs classés cherchant un saut de performance rapide.</p>
             <ul>
-              <li>1 entraînement tennis / jour + ateliers tactiques.</li>
-              <li>Activités complémentaires : golf, préparation mentale, yoga.</li>
-              <li>Sorties culturelles et team building premium.</li>
+              <li>6 jours • 30h d’entraînement</li>
+              <li>Data vidéo & préparation physique</li>
+              <li>Coaching mental quotidien</li>
             </ul>
+            <div class="program-card__footer">
+              <span class="program-card__price">1 190€</span>
+              <span>Places restantes : 2</span>
+            </div>
           </article>
-          <article class="option-card">
-            <h3>Tournée Compétition</h3>
-            <p><strong>10 jours • 4 200 €</strong> (hors hébergement)</p>
+          <article class="program-card">
+            <span class="program-card__tag">Tournois</span>
+            <h3>Impact Tour</h3>
+            <p>Tournée FFT / ITF accompagnée par le staff Tennis Impact.</p>
             <ul>
-              <li>Coaching sur matchs officiels, routines de performance.</li>
-              <li>Bilans quotidiens, récupération cryo &amp; soins kiné.</li>
-              <li>Suivi digital 30 jours après le stage.</li>
+              <li>2 semaines minimum</li>
+              <li>Coach référent + préparateur physique</li>
+              <li>Gestion logistique & reporting</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark" id="lieux">
-      <div class="container">
-        <div class="section__intro">
-          <span class="eyebrow eyebrow--light">Destinations 2024</span>
-          <h2>Choisissez votre écrin de performance</h2>
-          <p>Nos sites partenaires offrent un confort premium et des équipements haut de gamme.</p>
-        </div>
-        <div class="locations-grid">
-          <article class="location-tile">
-            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Hostens" />
-            <div class="card__body">
-              <h3>Hostens – Landes</h3>
-              <p>Nature préservée, lac privé, infrastructures haut de gamme pour un stage oxygénant.</p>
-              <p><strong>+ Hébergement premium disponible.</strong></p>
-            </div>
-          </article>
-          <article class="location-tile">
-            <img src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80" alt="Poitiers" />
-            <div class="card__body">
-              <h3>CREPS Poitiers</h3>
-              <p>Centre d’excellence avec salles de préparation physique, staff médical et restauration dédiée.</p>
-              <p><strong>+ Option Futuroscope incluse.</strong></p>
-            </div>
-          </article>
-          <article class="location-tile">
-            <img src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80" alt="Aix-en-Provence" />
-            <div class="card__body">
-              <h3>Aix-en-Provence</h3>
-              <p>Climat idéal, surfaces variées et programme tennis &amp; français pour une immersion complète.</p>
-              <p><strong>+ Hébergement en résidence 4★.</strong></p>
-            </div>
-          </article>
-          <article class="location-tile">
-            <img src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80" alt="Cabourg" />
-            <div class="card__body">
-              <h3>Cabourg</h3>
-              <p>Atmosphère littoral chic, night sessions, sorties bien-être et golf à proximité.</p>
-              <p><strong>+ Option famille disponible.</strong></p>
+            <div class="program-card__footer">
+              <span class="program-card__price">Sur devis</span>
+              <span>Places restantes : 1 équipe</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="devis">
-      <div class="container booking-form">
-        <span class="eyebrow">Créons votre devis premium</span>
-        <h2>Partagez vos attentes, nous nous occupons du reste</h2>
-        <form id="bookingForm">
-          <input type="text" name="name" placeholder="Nom &amp; Prénom du joueur" required />
-          <input type="email" name="email" placeholder="Email du parent" required />
-          <input type="tel" name="phone" placeholder="Téléphone" required />
-          <select name="stage" required>
-            <option value="" disabled selected>Stage souhaité</option>
-            <option value="performance">Performance Intensive</option>
-            <option value="multisport">Immersion Multisport</option>
-            <option value="tournoi">Tournée Compétition</option>
-          </select>
-          <select name="destination" required>
-            <option value="" disabled selected>Destination préférée</option>
-            <option value="hostens">Hostens – Landes</option>
-            <option value="poitiers">CREPS Poitiers</option>
-            <option value="aix">Aix-en-Provence</option>
-            <option value="cabourg">Cabourg</option>
-          </select>
-          <input type="date" name="date" placeholder="Semaine souhaitée" required />
-          <textarea name="details" placeholder="Précisez le niveau de jeu, objectifs et besoins en hébergement"></textarea>
-          <button class="btn btn--gold" type="submit">Envoyer ma demande</button>
-        </form>
+    <section class="section" id="formulaire">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Formulaire</span>
+            <h2>Valider ma demande</h2>
+            <p>Indiquez vos informations. Un membre du staff vous contactera pour finaliser l’inscription et le paiement sécurisé.</p>
+          </div>
+          <form class="form-grid">
+            <label for="book-name">Nom du joueur</label>
+            <input id="book-name" name="name" type="text" placeholder="Nom & prénom" required />
+            <label for="book-age">Âge</label>
+            <input id="book-age" name="age" type="number" min="6" max="22" placeholder="15" required />
+            <label for="book-level">Classement / niveau</label>
+            <input id="book-level" name="level" type="text" placeholder="15/1, UTR 7, Débutant…" />
+            <label for="book-stage">Stage choisi</label>
+            <select id="book-stage" name="stage" required>
+              <option value="">Sélectionner</option>
+              <option value="essentials">Impact Essentials</option>
+              <option value="elite">Impact Elite</option>
+              <option value="tour">Impact Tour</option>
+            </select>
+            <label for="book-date">Semaine souhaitée</label>
+            <input id="book-date" name="date" type="date" />
+            <label for="book-message">Message complémentaire</label>
+            <textarea id="book-message" name="message" placeholder="Objectifs, besoins spécifiques..."></textarea>
+            <button class="btn btn--primary" type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
       </div>
-    </section>
-
-    <section class="container contact-banner">
-      <p>Besoin d’un accompagnement immédiat ? <a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a> • +33 6 00 00 00 00</p>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="shell site-footer__grid">
+      <div>
+        <div class="site-footer__brand">Tennis Impact Academy</div>
+        <p>Académie haute performance inspirée des standards Mouratoglou. Bordeaux & tournées internationales.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+33556000000">+33 (0)5 56 00 00 00</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a></li>
+          <li>14 avenue du Court Central · 33000 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programmes</h3>
+        <ul class="site-footer__list">
+          <li><a href="stages_jeunes.html">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html">Coaching privé</a></li>
+          <li><a href="notre-academie.html">Académie annuelle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ressources</h3>
+        <ul class="site-footer__list">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell site-footer__bottom">
+      <p>© <span id="currentYear"></span> Tennis Impact Academy. Tous droits réservés.</p>
+      <div>
+        <a href="politique-confidentialite.html">Confidentialité</a> ·
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    const bookingForm = document.getElementById('bookingForm');
-
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll', !expanded);
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
-
-    bookingForm?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('Merci ! Un conseiller Tennis Impact vous recontactera sous 24h.');
-      bookingForm.reset();
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
