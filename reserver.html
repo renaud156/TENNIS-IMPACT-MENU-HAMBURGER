@@ -193,6 +193,20 @@ function closeForm() {
   document.getElementById("form-popup").style.display = "none";
 }
 
+
+</style>
+<script>
+function openForm(stageName) {
+  const popup = document.getElementById("form-popup");
+  const input = popup.querySelector("input[name='stage'], select[name='stage']");
+  if (input) input.value = stageName;
+  popup.style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("form-popup").style.display = "none";
+}
+
 // Simulation d'envoi avec fermeture automatique
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("#form-popup form");
@@ -205,10 +219,573 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Formulaire envoyé !");
         closeForm();
       }, 1000);
+    .contact-banner {
+      margin: 5rem 0 3rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__container">
+      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar__links" id="mainNav">
+        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
+        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
+        <a href="espace_coach.html" class="nav-link">Espace coach</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <div class="navbar__cta">
+          <a class="btn btn--ghost" href="lecon_individuelle.html">Réserver une leçon</a>
+          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="booking-hero">
+      <div class="container">
+        <p class="hero__subtitle">Parcours d’excellence</p>
+        <h1>Réservez votre stage Tennis Impact</h1>
+        <p>Renseignez vos préférences de dates, le profil du joueur et nous reviendrons vers vous avec une proposition personnalisée incluant hébergement et services premium.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#devis">Construire mon devis</a>
+          <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un conseiller</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formules">
+      <div class="container">
+        <span class="eyebrow">Formules disponibles</span>
+        <h2>Des expériences pour tous les objectifs</h2>
+        <div class="stage-options">
+          <article class="option-card">
+            <h3>Performance Intensive</h3>
+            <p><strong>1 semaine • 1 600 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>2 sessions tennis quotidiennes + préparation physique.</li>
+              <li>Analyse vidéo, coaching mental et suivi nutrition.</li>
+              <li>Option tournoi FFT ou UTR en fin de stage.</li>
+            </ul>
+          </article>
+          <article class="option-card">
+            <h3>Immersion Multisport</h3>
+            <p><strong>5 jours • 1 050 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>1 entraînement tennis / jour + ateliers tactiques.</li>
+              <li>Activités complémentaires : golf, préparation mentale, yoga.</li>
+              <li>Sorties culturelles et team building premium.</li>
+            </ul>
+          </article>
+          <article class="option-card">
+            <h3>Tournée Compétition</h3>
+            <p><strong>10 jours • 4 200 €</strong> (hors hébergement)</p>
+            <ul>
+              <li>Coaching sur matchs officiels, routines de performance.</li>
+              <li>Bilans quotidiens, récupération cryo &amp; soins kiné.</li>
+              <li>Suivi digital 30 jours après le stage.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="lieux">
+      <div class="container">
+        <div class="section__intro">
+          <span class="eyebrow eyebrow--light">Destinations 2024</span>
+          <h2>Choisissez votre écrin de performance</h2>
+          <p>Nos sites partenaires offrent un confort premium et des équipements haut de gamme.</p>
+        </div>
+        <div class="locations-grid">
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Hostens" />
+            <div class="card__body">
+              <h3>Hostens – Landes</h3>
+              <p>Nature préservée, lac privé, infrastructures haut de gamme pour un stage oxygénant.</p>
+              <p><strong>+ Hébergement premium disponible.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1544322435-5b07c1309b20?auto=format&fit=crop&w=1200&q=80" alt="Poitiers" />
+            <div class="card__body">
+              <h3>CREPS Poitiers</h3>
+              <p>Centre d’excellence avec salles de préparation physique, staff médical et restauration dédiée.</p>
+              <p><strong>+ Option Futuroscope incluse.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1560582861-45078880e48e?auto=format&fit=crop&w=1200&q=80" alt="Aix-en-Provence" />
+            <div class="card__body">
+              <h3>Aix-en-Provence</h3>
+              <p>Climat idéal, surfaces variées et programme tennis &amp; français pour une immersion complète.</p>
+              <p><strong>+ Hébergement en résidence 4★.</strong></p>
+            </div>
+          </article>
+          <article class="location-tile">
+            <img src="https://images.unsplash.com/photo-1518081461904-9d8f136351c8?auto=format&fit=crop&w=1200&q=80" alt="Cabourg" />
+            <div class="card__body">
+              <h3>Cabourg</h3>
+              <p>Atmosphère littoral chic, night sessions, sorties bien-être et golf à proximité.</p>
+              <p><strong>+ Option famille disponible.</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="devis">
+      <div class="container booking-form">
+        <span class="eyebrow">Créons votre devis premium</span>
+        <h2>Partagez vos attentes, nous nous occupons du reste</h2>
+        <form id="bookingForm">
+          <input type="text" name="name" placeholder="Nom &amp; Prénom du joueur" required />
+          <input type="email" name="email" placeholder="Email du parent" required />
+          <input type="tel" name="phone" placeholder="Téléphone" required />
+          <select name="stage" required>
+            <option value="" disabled selected>Stage souhaité</option>
+            <option value="performance">Performance Intensive</option>
+            <option value="multisport">Immersion Multisport</option>
+            <option value="tournoi">Tournée Compétition</option>
+          </select>
+          <select name="destination" required>
+            <option value="" disabled selected>Destination préférée</option>
+            <option value="hostens">Hostens – Landes</option>
+            <option value="poitiers">CREPS Poitiers</option>
+            <option value="aix">Aix-en-Provence</option>
+            <option value="cabourg">Cabourg</option>
+          </select>
+          <input type="date" name="date" placeholder="Semaine souhaitée" required />
+          <textarea name="details" placeholder="Précisez le niveau de jeu, objectifs et besoins en hébergement"></textarea>
+          <button class="btn btn--gold" type="submit">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="container contact-banner">
+      <p>Besoin d’un accompagnement immédiat ? <a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a> • +33 6 00 00 00 00</p>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const body = document.body;
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll('a')) : [];
+    const bookingForm = document.getElementById('bookingForm');
+
+    function closeNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('no-scroll');
+      body.classList.remove('nav-open');
+    }
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        body.classList.toggle('no-scroll', isOpen);
+        body.classList.toggle('nav-open', isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mainNav.classList.contains('is-open')) {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNav.classList.contains('is-open')) {
+          return;
+        }
+        if (event.target instanceof Node && !mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && mainNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mainNav?.classList.contains('is-open')) {
+        closeNav();
+      }
     });
   }
 });
 </script>
+
+<style>
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  overflow-y: auto;
+}
+.popup-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 800px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+.popup-content h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+.popup-images img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  max-height: 300px;
+  object-fit: cover;
+}
+.popup-text {
+  font-size: 1em;
+  color: #222;
+  line-height: 1.6;
+}
+.popup-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+}
+</style>
+
+<style>
+html{scroll-behavior:smooth}
+#nos-hebergements, section#nos-hebergements, [id="nos-hebergements"]{scroll-margin-top:120px}
+</style><style>
+html{scroll-behavior:smooth}
+#nos-hebergements,[id="nos-hebergements"],section#nos-hebergements{scroll-margin-top:120px}
+</style><style>html{scroll-behavior:smooth} [id="nos-hebergements"]{scroll-margin-top:120px}</style><style>
+html{scroll-behavior:smooth}
+#nos-hebergements,[id="nos-hebergements"],section#nos-hebergements,h1[id="nos-hebergements"],h2[id="nos-hebergements"]{scroll-margin-top:var(--header-offset,140px)}
+/* also for the nearest heading after the anchor */
+#nos-hebergements + h1, #nos-hebergements + h2 {scroll-margin-top:var(--header-offset,140px)}
+</style></head>
+<body>
+<section style="position: relative; width: 100%; height: 100vh; background: url('assets/photos/3.png') center/cover no-repeat; display: flex; align-items: center; justify-content: center;">
+<div style="background-color: rgba(0,0,0,0.55); padding: 40px; border-radius: 12px; color: white; text-align: center;">
+<h1 style="font-size: 2.5rem; margin: 0;">Réservez votre stage</h1>
+<span id="nos-hebergements"></span><span id="options"></span><h2 style="font-size: 1.6rem; font-weight: 300;">Choisissez vos dates et options d’hébergement</h2>
+<p style="margin-top: 10px; font-size: 1rem;">Académie Tennis Impact</p>
+</div>
+</section>
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 2px solid #eee; padding: 12px 20px; display: flex; justify-content: center; gap: 30px; font-weight: bold;">
+<a href="#stages" style="color: #001f3f; text-decoration: none;">Stages</a>
+<a href="#methodologie" style="color: #001f3f; text-decoration: none;">Méthodologie</a>
+<a href="reserver.html#nos-hebergements" style="color: #001f3f; text-decoration: none;">Nos Hébergements</a>
+<a href="#options" style="color: #001f3f; text-decoration: none;">Options</a>
+<a href="#faq" style="color: #001f3f; text-decoration: none;">FAQ</a>
+</nav>
+<section style="width: 100%; background-color: white; padding: 100px 20px 120px; position: relative;">
+<div style="max-width: 1000px; margin: auto; text-align: center;">
+<span id="stages"></span><h2 style="color: #001f3f; font-size: 2.5rem; margin-bottom: 20px;">
+      Des stages tennis jeunes au cœur de la Côte d’Azur
+    </h2>
+<h3 style="color: #FFD700; font-size: 1.6rem; font-weight: bold; margin-bottom: 30px;">
+      OFFREZ À VOTRE ENFANT L’EXCELLENCE TENNIS IMPACT
+    </h3>
+<p style="font-size: 1.2rem; color: #333; line-height: 1.8;">
+      Chaque année, Tennis Impact accueille de nombreux jeunes joueurs venus de toute la France pour vivre une expérience unique alliant sport de haut niveau, développement personnel et plaisir du jeu.<br/><br/>
+      Nos stages de tennis pour jeunes sont conçus pour s’adapter à tous les profils : du joueur loisir au compétiteur ambitieux. Dans un environnement structuré, dynamique et bienveillant, votre enfant progresse à son rythme tout en découvrant les exigences du haut niveau.
+    </p>
+</div>
+<!-- Vague de séparation corrigée -->
+<div style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+<svg preserveaspectratio="none" style="display: block; width: 100%; height: 70px;" viewbox="0 0 500 50">
+<path d="M0,30 C150,80 350,-10 500,30 L500,00 L0,0 Z" style="fill:#001f3f;"></path>
+</svg>
+</div>
+</section>
+<div class="container">
+<div class="stages">
+<div class="stage-card">
+<img alt="Stage INTENSIF" src="assets/photos/1.png"/>
+<div class="content">
+<h3>Stage INTENSIF</h3>
+<p>Journée entière • 23 juin - 28 juin</p>
+<p class="price">1 600,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>2 sessions de tennis en groupe par jour</li><li>3h d'activité physique</li><li>Rapport individuel</li><li>Repas du midi</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+<div class="stage-card">
+<img alt="Stage COMPÉTITION" src="assets/photos/2.png"/>
+<div class="content">
+<h3>Stage COMPÉTITION</h3>
+<p>Journée entière • 23 juin - 05 juil.</p>
+<p class="price">4 200,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>2 sessions de tennis</li><li>Tournoi UTR inclus</li><li>Préparation mentale</li><li>Rapport individuel</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+<div class="stage-card">
+<img alt="Stage DEMI-JOURNÉE" src="assets/photos/3.png"/>
+<div class="content">
+<h3>Stage DEMI-JOURNÉE</h3>
+<p>Demi journée • 23 juin - 28 juin</p>
+<p class="price">1 050,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>1 session de tennis</li><li>Rapport individuel</li><li>Matinée uniquement</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+<div class="stage-card">
+<img alt="Stage INTENSIF + Français" src="assets/photos/4.png"/>
+<div class="content">
+<h3>Stage INTENSIF + Français</h3>
+<p>Journée entière • 30 juin - 05 juil.</p>
+<p class="price">1 750,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>Tennis + Français</li><li>1h30 de physique/jour</li><li>Repas du midi</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+<div class="stage-card">
+<img alt="Stage TENNIS &amp; GOLF" src="assets/photos/5.png"/>
+<div class="content">
+<h3>Stage TENNIS &amp; GOLF</h3>
+<p>Journée entière • 30 juin - 05 juil.</p>
+<p class="price">1 700,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>Tennis le matin</li><li>Golf l’après-midi</li><li>Repas du midi</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+<div class="stage-card">
+<img alt="Stage NIGHT SESSIONS" src="assets/photos/6.png"/>
+<div class="content">
+<h3>Stage NIGHT SESSIONS</h3>
+<p>Soir • 30 juin - 04 juil.</p>
+<p class="price">900,00 € <span style="font-weight: normal;">*Sans hébergement</span></p>
+<ul>
+<li>Sessions du soir</li><li>Cardio tennis</li><li>Welcome pack</li>
+</ul>
+<button onclick="openForm('Stage INTENSIF')">Ajouter ce stage</button>
+</div>
+</div>
+</div>
+<div class="cart">
+<h2>Mon Panier</h2>
+<div class="cart-item">
+<span><strong>Stage INTENSIF</strong></span>
+<span>23 juin - 28 juin</span>
+<span>1 600,00 €</span>
+</div>
+<button onclick="openForm('Panier')">Valider l’inscription</button>
+</div>
+</div>
+<div id="form-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 40px; border-radius: 20px; z-index: 1000; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; font-family: Poppins, sans-serif;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<h2 style="margin-top: 0; color: #0d0d1f;">Inscription au Stage</h2>
+<button onclick="closeForm()" style="background-color: #bbb; padding: 5px 10px; border: none; border-radius: 8px;">X</button>
+</div>
+<form>
+<div class="form-grid">
+<label for="lieu">
+     Lieu du stage
+    </label>
+<select id="lieu" name="lieu">
+<option value="Paris">
+      Paris
+     </option>
+<option value="Colmar">
+      Colmar
+     </option>
+</select>
+<label for="type_stage">
+     Type de stage
+    </label>
+<select id="type_stage" name="type_stage">
+<option value="Intensif">
+      Intensif
+     </option>
+<option value="Demi-journée">
+      Demi-journée
+     </option>
+<option value="Compétition">
+      Compétition
+     </option>
+</select>
+<div class="form-field">
+<label for="prenom">
+      Prénom
+     </label>
+</div>
+<div class="form-field">
+<input id="prenom" name="prenom" required="" type="text"/>
+</div>
+<div class="form-field">
+<label for="nom">
+      Nom
+     </label>
+</div>
+<div class="form-field">
+<input id="nom" name="nom" required="" type="text"/>
+</div>
+<div class="form-field">
+<label for="niveau">
+      Niveau FFT
+     </label>
+</div>
+<div class="form-field">
+<select id="niveau" name="niveau">
+<option value="">
+       -- Sélectionnez --
+      </option>
+<option>
+       Blanc
+      </option>
+<option>
+       Violet
+      </option>
+<option>
+       Rouge
+      </option>
+<option>
+       Orange
+      </option>
+<option>
+       Vert
+      </option>
+<option>
+       Jaune
+      </option>
+<option>
+       40
+      </option>
+<option>
+       30/5
+      </option>
+<option>
+       30/4
+      </option>
+<option>
+       30/3
+      </option>
+<option>
+       30/2
+      </option>
+<option>
+       30/1
+      </option>
+<option>
+       30
+      </option>
+<option>
+       15/5
+      </option>
+<option>
+       15/4
+      </option>
+<option>
+       15/3
+      </option>
+<option>
+       15/2
+      </option>
+<option>
+       15/1
+      </option>
+<option>
+       15
+      </option>
+<option>
+       -2/6
+      </option>
+<option>
+       -4/6
+      </option>
+<option>
+       -15
+      </option>
+</select>
+</div>
+<div class="form-field">
+<label for="date">
+      Semaine de Stage
+     </label>
+</div>
+<div class="form-field">
+<input id="date" name="date" required="" type="week"/>
+</div>
+<div class="form-field">
+<label for="hebergement">
+      Souhaitez-vous l’hébergement ?
+     </label>
+</div>
+<div class="form-field">
+<select id="nos-hebergements" name="hebergement">
+<option value="">
+       -- Sélectionnez --
+      </option>
+<option>
+       Oui
+      </option>
+<option>
+       Non
+      </option>
+</select>
+</div>
+</div>
+<button type="submit">
+    Valider l'inscription
+   </button>
+</form>
+</div>
+<script>
+function openForm(stageName) {
+  const popup = document.getElementById("form-popup");
+  const input = popup.querySelector("input[name='stage'], select[name='stage']");
+  if (input) input.value = stageName;
+  popup.style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("form-popup").style.display = "none";
+}
+
 
 <style>
 .popup {
