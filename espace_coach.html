@@ -1,260 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Espace coach – Tennis Impact</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Espace coach – Tennis Impact Academy</title>
+  <meta name="description" content="Rejoignez le réseau de coachs Tennis Impact : partenariats premium, infrastructures et accompagnement business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: #f5f6fb;
-      color: var(--color-navy);
-    }
-
-    .hero-coach {
-      position: relative;
-      padding: 120px 0 90px;
-      background: linear-gradient(120deg, rgba(5, 10, 15, 0.85), rgba(20, 44, 69, 0.9)),
-        url('https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=1800&q=80') center/cover;
-      color: var(--color-white);
-    }
-
-    .hero-coach h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.6rem, 4vw, 3.3rem);
-      margin-bottom: 1rem;
-    }
-
-    .hero-coach p {
-      max-width: 680px;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .benefit-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-card);
-      padding: 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(14px);
-    }
-
-    .benefit-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .content-section {
-      padding: 80px 0;
-    }
-
-    .content-section .section__grid {
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .coach-visual {
-      border-radius: var(--radius-large);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .engagement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .engagement-card {
-      background: var(--color-white);
-      border-radius: var(--radius-card);
-      padding: 2rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .form-card {
-      background: var(--color-night);
-      color: var(--color-white);
-      padding: clamp(2.5rem, 4vw, 3.5rem);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow-strong);
-      max-width: 780px;
-      margin: 0 auto 100px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .form-grid input,
-    .form-grid textarea,
-    .form-grid select {
-      width: 100%;
-      padding: 0.95rem 1.1rem;
-      border-radius: 12px;
-      border: none;
-      font-size: 0.95rem;
-    }
-
-    .form-grid textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .form-card button {
-      margin-top: 1.5rem;
-    }
-  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar__container">
-      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
         <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
       </a>
-      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
         <span></span>
       </button>
-      <nav class="navbar__links" id="mainNav">
-        <a href="index.html#stages" class="nav-link">Stages jeunes</a>
-        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
-        <a href="espace_coach.html" class="nav-link" aria-current="page">Espace coach</a>
-        <a href="index.html#galerie" class="nav-link">Galerie</a>
-        <div class="navbar__cta">
-          <a class="btn btn--ghost" href="lecon_individuelle.html">Réserver une leçon</a>
-          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+      <nav class="site-nav" id="primaryNav">
+        <a class="site-nav__link" href="index.html">Accueil</a>
+        <a class="site-nav__link" href="notre-academie.html">Académie</a>
+        <a class="site-nav__link" href="stages_jeunes.html">Stages</a>
+        <a class="site-nav__link" href="lecon_individuelle.html">Coaching privé</a>
+        <a class="site-nav__link" href="galerie.html">Galerie</a>
+        <a class="site-nav__link" href="faq.html">FAQ</a>
+        <div class="site-nav__cta">
+          <a class="btn btn--outline" href="reservation_lecon.html">Planifier une leçon</a>
+          <a class="btn btn--primary" href="#formulaire">Devenir partenaire</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero-coach">
-      <div class="container section__grid">
-        <div>
-          <p class="hero__subtitle">Partenariat premium</p>
-          <h1>Devenez coach partenaire Tennis Impact</h1>
-          <p>Rejoignez un réseau d’experts passionnés, accédez à nos infrastructures haut de gamme et bénéficiez d’un accompagnement business sur mesure.</p>
-          <div class="hero__actions">
-            <a class="btn btn--gold" href="#formulaire">Rejoindre le programme</a>
+    <section class="page-hero">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80" alt="Réunion coachs" />
+      </div>
+      <div class="shell page-hero__inner">
+        <div class="page-hero__text">
+          <span class="page-hero__preheading">Réseau Impact</span>
+          <h1 class="page-hero__title">Espace dédié aux coachs partenaires</h1>
+          <p class="page-hero__lede">Intégrez un collectif d’entraîneurs inspiré des standards Mouratoglou : ressources, missions, infrastructures et accompagnement business.</p>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="#avantages">Découvrir les avantages</a>
             <a class="btn btn--ghost" href="CONTRAT%20APPORTEUR%20TYPE.pdf" download>Télécharger le contrat</a>
           </div>
-          <div class="benefits-grid">
-            <div class="benefit-card">
-              <h3>Commission jusqu'à 10 ans</h3>
-              <p>Rémunération progressive sur chaque joueur parrainé tout au long de sa progression.</p>
-            </div>
-            <div class="benefit-card">
-              <h3>Accès infrastructures</h3>
-              <p>Réservez nos courts et espaces bien-être pour accueillir vos joueurs dans un cadre prestige.</p>
-            </div>
-            <div class="benefit-card">
-              <h3>Outils marketing clé en main</h3>
-              <p>Kits digitaux, argumentaires commerciaux et reporting hebdomadaire des prospects.</p>
-            </div>
-          </div>
-        </div>
-        <div class="coach-visual">
-          <img src="https://images.unsplash.com/photo-1532339142463-fd0a8979791a?auto=format&fit=crop&w=1200&q=80" alt="Coachs de tennis Tennis Impact" />
         </div>
       </div>
     </section>
 
-    <section class="section content-section" id="missions">
-      <div class="container section__grid">
-        <div class="section__content">
-          <span class="eyebrow">Vos missions</span>
-          <h2>Devenez l’ambassadeur privilégié de nos stages</h2>
-          <p>Vous identifiez les profils adaptés, présentez l’expérience Tennis Impact et assurez un suivi personnalisé avant, pendant et après les programmes.</p>
-          <ul class="feature-list">
-            <li>Accompagner la sélection des stages et le planning annuel.</li>
-            <li>Préparer mentalement et physiquement les joueurs recommandés.</li>
-            <li>Partager des bilans réguliers avec notre cellule performance.</li>
+    <section class="section" id="avantages">
+      <div class="shell">
+        <div class="section__header">
+          <span class="eyebrow">Avantages partenaires</span>
+          <h2 class="section__title">Un cadre d’excellence pour développer votre activité</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">🤝</div>
+            <h3>Commission durable</h3>
+            <p>Rémunération sur chaque joueur apporté pendant 10 ans, bonus sur objectifs et accès privilégié aux stages.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🏟️</div>
+            <h3>Infrastructures premium</h3>
+            <p>Courts indoor/outdoor, Impact Lab, salles de réunion et espaces clients pour accueillir vos athlètes.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📈</div>
+            <h3>Support business</h3>
+            <p>Outils marketing, CRM partagé, facturation gérée par l’académie et accompagnement administratif.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🎓</div>
+            <h3>Développement continu</h3>
+            <p>Workshops mensuels, mentoring par nos head coaches et accès aux ressources pédagogiques Impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell split">
+        <div class="split__media">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Coachs réunis" />
+        </div>
+        <div class="split__content">
+          <span class="eyebrow">Processus</span>
+          <h3>Comment rejoindre Tennis Impact ?</h3>
+          <ul class="split__list">
+            <li><span class="split__list-icon">1</span>Remplissez le formulaire de candidature avec votre parcours et vos références.</li>
+            <li><span class="split__list-icon">2</span>Échange visio avec notre direction sportive pour valider l’alignement pédagogique.</li>
+            <li><span class="split__list-icon">3</span>Onboarding sur le campus, accès aux outils et premières missions coachées.</li>
           </ul>
         </div>
-        <div class="section__visual">
-          <img src="assets/images/gallery-3.svg" alt="Illustration de coaching Tennis Impact" />
-        </div>
       </div>
     </section>
 
-    <section class="section section--dark">
-      <div class="container">
-        <div class="section__intro">
-          <span class="eyebrow eyebrow--light">Engagements Tennis Impact</span>
-          <h2>Un partenariat construit sur la confiance</h2>
-          <p>Nous investissons dans votre réussite avec un accompagnement marketing, juridique et sportif.</p>
-        </div>
-        <div class="engagement-grid">
-          <div class="engagement-card">
-            <h3>Suivi business dédié</h3>
-            <p>Tracking hebdomadaire des prospects et conversion assurée par notre équipe admissions.</p>
+    <section class="section" id="formulaire">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Candidature</span>
+            <h2>Devenir coach partenaire</h2>
+            <p>Envoyez-nous votre profil. Nous répondons sous 72h avec les prochaines étapes.</p>
           </div>
-          <div class="engagement-card">
-            <h3>Programme de fidélité</h3>
-            <p>Bonus exclusifs sur l’hébergement, invitations VIP et accès aux événements pros.</p>
-          </div>
-          <div class="engagement-card">
-            <h3>Communauté d’experts</h3>
-            <p>Workshops trimestriels, masterclass de préparation mentale et veille technique continue.</p>
-          </div>
+          <form class="form-grid">
+            <label for="coach-name">Nom complet</label>
+            <input id="coach-name" name="name" type="text" placeholder="Nom & prénom" required />
+            <label for="coach-email">Email</label>
+            <input id="coach-email" name="email" type="email" placeholder="vous@example.com" required />
+            <label for="coach-phone">Téléphone</label>
+            <input id="coach-phone" name="phone" type="tel" placeholder="+33" />
+            <label for="coach-experience">Expérience</label>
+            <select id="coach-experience" name="experience" required>
+              <option value="">Sélectionner</option>
+              <option value="club">Coach club régional</option>
+              <option value="national">Encadrement national / FFT</option>
+              <option value="international">Circuit international</option>
+            </select>
+            <label for="coach-message">Présentez votre projet</label>
+            <textarea id="coach-message" name="message" placeholder="Vos objectifs, vos disponibilités, vos attentes..." required></textarea>
+            <button class="btn btn--primary" type="submit">Envoyer ma candidature</button>
+          </form>
         </div>
       </div>
-    </section>
-
-    <section class="form-card" id="formulaire">
-      <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 0.5rem;">Candidatez en 2 minutes</h2>
-      <p style="color: rgba(255, 255, 255, 0.75); max-width: 520px;">Dites-nous en plus sur votre structure et vos objectifs : notre équipe vous recontacte sous 24h.</p>
-      <form class="form-grid" id="coachForm">
-        <input type="text" name="name" placeholder="Nom &amp; Prénom" required />
-        <input type="email" name="email" placeholder="Email professionnel" required />
-        <input type="tel" name="phone" placeholder="Téléphone" required />
-        <select name="experience" required>
-          <option value="" disabled selected>Expérience coaching</option>
-          <option value="-5">0 - 5 ans</option>
-          <option value="5-10">5 - 10 ans</option>
-          <option value="10+">10 ans et +</option>
-        </select>
-        <input type="text" name="club" placeholder="Club ou structure" required />
-        <textarea name="message" placeholder="Parlez-nous de vos joueurs et de vos attentes" required></textarea>
-        <button class="btn btn--gold" type="submit">Envoyer ma candidature</button>
-      </form>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="shell site-footer__grid">
+      <div>
+        <div class="site-footer__brand">Tennis Impact Academy</div>
+        <p>Académie haute performance inspirée des standards Mouratoglou. Bordeaux & tournées internationales.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+33556000000">+33 (0)5 56 00 00 00</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a></li>
+          <li>14 avenue du Court Central · 33000 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programmes</h3>
+        <ul class="site-footer__list">
+          <li><a href="stages_jeunes.html">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html">Coaching privé</a></li>
+          <li><a href="notre-academie.html">Académie annuelle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ressources</h3>
+        <ul class="site-footer__list">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell site-footer__bottom">
+      <p>© <span id="currentYear"></span> Tennis Impact Academy. Tous droits réservés.</p>
+      <div>
+        <a href="politique-confidentialite.html">Confidentialité</a> ·
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    const coachForm = document.getElementById('coachForm');
-
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll', !expanded);
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
-
-    coachForm?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('Merci ! Nous vous recontactons très vite.');
-      coachForm.reset();
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

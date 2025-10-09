@@ -2,206 +2,171 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Réservation leçon individuelle – Tennis Impact</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Réserver une leçon privée – Tennis Impact Academy</title>
+  <meta name="description" content="Planifiez votre leçon individuelle avec un coach Tennis Impact : diagnostic, session sur-mesure et suivi premium." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fc;
-      color: #001f3f;
-      margin: 0;
-    }
-
-    .booking-hero {
-      position: relative;
-      padding: 110px 0 80px;
-      background: linear-gradient(120deg, rgba(5, 10, 15, 0.82), rgba(13, 27, 42, 0.82)),
-        url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=80') center/cover;
-      color: #fff;
-      text-align: center;
-    }
-
-    .booking-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4vw, 3.1rem);
-      margin-bottom: 1rem;
-    }
-
-    .booking-hero p {
-      max-width: 640px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-    }
-
-    .reservation-card {
-      max-width: 720px;
-      margin: -60px auto 60px;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 30px 80px rgba(5, 10, 15, 0.18);
-      padding: clamp(2.5rem, 4vw, 3.5rem);
-    }
-
-    .reservation-card h2 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 1.5rem;
-    }
-
-    .reservation-card form {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    .reservation-card label {
-      font-weight: 600;
-      display: block;
-    }
-
-    .reservation-card input,
-    .reservation-card select,
-    .reservation-card textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(13, 27, 42, 0.15);
-      font-size: 0.95rem;
-      background: rgba(248, 249, 252, 0.9);
-    }
-
-    .reservation-card textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .reservation-card .form-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .reservation-card button {
-      margin-top: 1.5rem;
-      align-self: start;
-    }
-
-    .info-banner {
-      max-width: 720px;
-      margin: 0 auto 80px;
-      text-align: center;
-      color: rgba(13, 27, 42, 0.7);
-    }
-  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar__container">
-      <a class="navbar__brand" href="index.html" aria-label="Retour à l'accueil Tennis Impact">
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
         <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
       </a>
-      <button class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
         <span></span>
       </button>
-      <nav class="navbar__links" id="mainNav">
-        <a href="stages_jeunes.html" class="nav-link">Stages jeunes</a>
-        <a href="lecon_individuelle.html" class="nav-link">Leçons individuelles</a>
-        <a href="espace_coach.html" class="nav-link">Espace coach</a>
-        <div class="navbar__cta">
-          <a class="btn btn--ghost" href="reserver.html">Réserver un stage</a>
-          <a class="btn btn--gold" href="mailto:contact@tennisimpact.fr">Contact</a>
+      <nav class="site-nav" id="primaryNav">
+        <a class="site-nav__link" href="index.html">Accueil</a>
+        <a class="site-nav__link" href="notre-academie.html">Académie</a>
+        <a class="site-nav__link" href="stages_jeunes.html">Stages</a>
+        <a class="site-nav__link" href="lecon_individuelle.html">Coaching privé</a>
+        <a class="site-nav__link" href="galerie.html">Galerie</a>
+        <a class="site-nav__link" href="faq.html">FAQ</a>
+        <div class="site-nav__cta">
+          <a class="btn btn--outline" href="reserver.html">Réserver un stage</a>
+          <a class="btn btn--primary" href="reservation_lecon.html">Planifier une leçon</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <section class="booking-hero">
-    <div class="container">
-      <p class="hero__subtitle">Coaching individuel premium</p>
-      <h1>Réservez votre leçon privée</h1>
-      <p>Sélectionnez votre coach et votre ville préférée – Paris ou Colmar – puis choisissez la date idéale. Notre équipe vous confirme la séance sous 12h.</p>
-      <div class="hero__actions">
-        <a class="btn btn--gold" href="#formulaire">Planifier maintenant</a>
-        <a class="btn btn--ghost" href="mailto:contact@tennisimpact.fr">Parler à un coach</a>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2000&q=80" alt="Coach accompagnant un joueur" />
       </div>
-    </div>
-  </section>
+      <div class="shell page-hero__inner">
+        <div class="page-hero__text">
+          <span class="page-hero__preheading">Leçon individuelle</span>
+          <h1 class="page-hero__title">Réservez votre session privée</h1>
+          <p class="page-hero__lede">Choisissez votre coach, la ville et la date. Nous confirmons la séance et envoyons le plan de travail personnalisé.</p>
+        </div>
+      </div>
+    </section>
 
-  <main class="reservation-card" id="formulaire">
-    <h2>Informations de réservation</h2>
-    <form id="lessonForm">
-      <div class="form-row">
-        <div>
-          <label for="fullName">Nom complet</label>
-          <input id="fullName" name="fullName" type="text" required />
+    <section class="section">
+      <div class="shell">
+        <div class="section__header">
+          <span class="eyebrow">Choisir son coach</span>
+          <h2 class="section__title">Des spécialistes pour chaque profil</h2>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div>
-          <label for="date">Date souhaitée</label>
-          <input id="date" name="date" type="date" required />
-        </div>
-        <div>
-          <label for="time">Heure souhaitée</label>
-          <input id="time" name="time" type="time" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div>
-          <label for="location">Lieu de la leçon</label>
-          <select id="location" name="location" required>
-            <option value="" disabled selected>Choisissez votre site</option>
-            <option value="paris">Paris – Stade prestige</option>
-            <option value="colmar">Colmar – Centre Tennis Europe</option>
-          </select>
-        </div>
-        <div>
-          <label for="level">Niveau de jeu</label>
-          <select id="level" name="level" required>
-            <option value="" disabled selected>Sélectionnez</option>
-            <option value="debutant">Débutant</option>
-            <option value="intermediaire">Intermédiaire</option>
-            <option value="avance">Avancé / Compétition</option>
-          </select>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">🎯</div>
+            <h3>Léa – Jeu agressif</h3>
+            <p>Travail du premier coup d’attaque, service/retour et transitions vers l’avant.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🛡️</div>
+            <h3>Hugo – Résilience</h3>
+            <p>Gestion tactique, défense active et routines mentales en compétition.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3>Olivia – Vitesse</h3>
+            <p>Déplacements, relâchement du bras et patterns rapides sur dur ou terre.</p>
+          </article>
         </div>
       </div>
-      <div>
-        <label for="details">Objectifs &amp; besoins</label>
-        <textarea id="details" name="details" placeholder="Décrivez vos axes de progression, préférences de coach, besoins spécifiques"></textarea>
+    </section>
+
+    <section class="section" id="formulaire">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Formulaire de réservation</span>
+            <h2>Planifier ma leçon</h2>
+            <p>Remplissez le formulaire. Nous revenons vers vous sous 12h avec la confirmation et les modalités de paiement sécurisé.</p>
+          </div>
+          <form class="form-grid" id="lessonForm">
+            <label for="lesson-name">Nom complet</label>
+            <input id="lesson-name" name="name" type="text" placeholder="Nom & prénom" required />
+            <label for="lesson-email">Email</label>
+            <input id="lesson-email" name="email" type="email" placeholder="vous@example.com" required />
+            <label for="lesson-phone">Téléphone</label>
+            <input id="lesson-phone" name="phone" type="tel" placeholder="+33" />
+            <label for="lesson-location">Ville</label>
+            <select id="lesson-location" name="location" required>
+              <option value="">Sélectionner</option>
+              <option value="bordeaux">Bordeaux – Campus Impact</option>
+              <option value="paris">Paris – Partenaire Mouratoglou Hausmann</option>
+              <option value="lyon">Lyon – Tennis Club Part-Dieu</option>
+            </select>
+            <label for="lesson-date">Date souhaitée</label>
+            <input id="lesson-date" name="date" type="date" required />
+            <label for="lesson-hour">Créneau préféré</label>
+            <input id="lesson-hour" name="hour" type="time" />
+            <label for="lesson-objective">Objectif</label>
+            <textarea id="lesson-objective" name="objective" placeholder="Décrivez vos attentes : service, revers, reprise de confiance..." required></textarea>
+            <button class="btn btn--primary" type="submit">Valider ma demande</button>
+          </form>
+        </div>
       </div>
-      <button class="btn btn--gold" id="pay-btn" type="submit">Valider ma demande</button>
-    </form>
+    </section>
   </main>
 
-  <div class="info-banner">
-    <p>Après validation, un coach Tennis Impact vous contacte pour confirmer le créneau et finaliser le paiement sécurisé.</p>
-  </div>
+  <footer class="site-footer">
+    <div class="shell site-footer__grid">
+      <div>
+        <div class="site-footer__brand">Tennis Impact Academy</div>
+        <p>Académie haute performance inspirée des standards Mouratoglou. Bordeaux & tournées internationales.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+33556000000">+33 (0)5 56 00 00 00</a></li>
+          <li><a href="mailto:contact@tennisimpact.fr">contact@tennisimpact.fr</a></li>
+          <li>14 avenue du Court Central · 33000 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programmes</h3>
+        <ul class="site-footer__list">
+          <li><a href="stages_jeunes.html">Stages jeunes</a></li>
+          <li><a href="lecon_individuelle.html">Coaching privé</a></li>
+          <li><a href="notre-academie.html">Académie annuelle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ressources</h3>
+        <ul class="site-footer__list">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell site-footer__bottom">
+      <p>© <span id="currentYear"></span> Tennis Impact Academy. Tous droits réservés.</p>
+      <div>
+        <a href="politique-confidentialite.html">Confidentialité</a> ·
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    const lessonForm = document.getElementById('lessonForm');
-
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll', !expanded);
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
-
-    lessonForm?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('Merci ! Votre coach Tennis Impact vous contactera sous 12h.');
-      lessonForm.reset();
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

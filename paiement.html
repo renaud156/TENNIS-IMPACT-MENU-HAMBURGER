@@ -1,84 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Paiement Stage - Tennis Impact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paiement – Tennis Impact Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .payment-container {
-      max-width: 500px;
-      margin: 100px auto;
-      background: #0D1B2A;
-      padding: 40px;
-      border-radius: 15px;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    h1 {
-      text-align: center;
-      color: #FFD700;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #FFD700;
-      color: #0D1B2A;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #e6c200;
-    }
-  </style>
 </head>
 <body>
-  <div class="payment-container">
-    <h1>Paiement</h1>
-    <form>
-      <label for="nom">Nom complet</label>
-      <input type="text" id="nom" name="nom" required>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.svg" alt="Tennis Impact" />
+        Tennis Impact Academy
+      </a>
+    </div>
+  </header>
 
-      <label for="email">Adresse email</label>
-      <input type="email" id="email" name="email" required>
+  <main>
+    <section class="section">
+      <div class="shell">
+        <div class="cta-panel" style="max-width:640px;margin-inline:auto;">
+          <div>
+            <span class="eyebrow">Paiement sécurisé</span>
+            <h1 class="section__title">Finaliser votre réservation</h1>
+            <p class="section__description">Complétez les informations ci-dessous. Le paiement est réalisé via notre partenaire Stripe.</p>
+          </div>
+          <form class="form-grid" id="paymentForm">
+            <label for="pay-name">Nom complet</label>
+            <input id="pay-name" name="name" type="text" placeholder="Nom & prénom" required />
+            <label for="pay-email">Email</label>
+            <input id="pay-email" name="email" type="email" placeholder="vous@example.com" required />
+            <label for="pay-offer">Programme</label>
+            <select id="pay-offer" name="offer" required>
+              <option value="">Sélectionner</option>
+              <option value="essentials">Stage Impact Essentials – 690€</option>
+              <option value="elite">Stage Impact Elite – 1 190€</option>
+              <option value="tour">Impact Tour – acompte 800€</option>
+            </select>
+            <label for="card-number">Numéro de carte</label>
+            <input id="card-number" name="card" type="text" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" required />
+            <label for="card-exp">Expiration</label>
+            <input id="card-exp" name="exp" type="text" inputmode="numeric" maxlength="5" placeholder="MM/AA" required />
+            <label for="card-cvv">CVV</label>
+            <input id="card-cvv" name="cvv" type="text" inputmode="numeric" maxlength="4" placeholder="123" required />
+            <button class="btn btn--primary" type="submit">Valider le paiement</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <label for="formule">Formule choisie</label>
-      <select id="formule" name="formule">
-        <option value="classique">Classique - 700€</option>
-        <option value="performance">Performance - 990€</option>
-        <option value="detection">Détection - 1200€</option>
-      </select>
-
-      <label for="carte">Numéro de carte</label>
-      <input type="text" id="carte" placeholder="1234 5678 9012 3456" maxlength="19">
-
-      <label for="date">Date d'expiration</label>
-      <input type="text" id="date" placeholder="MM/AA" maxlength="5">
-
-      <label for="cvv">CVV</label>
-      <input type="text" id="cvv" placeholder="123" maxlength="3">
-
-      <button type="submit">Valider le paiement</button>
-    </form>
-<script>document.querySelector("form").addEventListener("submit", function(e) { e.preventDefault(); window.location.href="merci.html"; });</script>
-  </div>
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      window.location.href = 'merci.html';
+    });
+  </script>
 </body>
 </html>
