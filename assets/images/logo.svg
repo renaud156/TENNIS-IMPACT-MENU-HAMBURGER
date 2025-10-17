@@ -1,13 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Pause Pilates</title>
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f7d046"/>
-      <stop offset="100%" stop-color="#d19d00"/>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d9b894" />
+      <stop offset="100%" stop-color="#b6885a" />
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.85)" />
+      <stop offset="55%" stop-color="rgba(255, 255, 255, 0.2)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+    </radialGradient>
   </defs>
-  <rect width="240" height="60" rx="14" fill="#0d1b2a"/>
-  <circle cx="46" cy="30" r="20" fill="url(#g)"/>
-  <path d="M30 20c6 7 24 9 24 9s-19 4-25 11" fill="none" stroke="#0d1b2a" stroke-width="3" stroke-linecap="round"/>
-  <text x="82" y="25" font-family="'Poppins',sans-serif" font-size="18" fill="#ffffff" font-weight="600">Tennis Impact</text>
-  <text x="82" y="44" font-family="'Playfair Display',serif" font-size="16" fill="#f7d046">Académie</text>
+  <rect width="240" height="60" rx="16" fill="#191d2c" />
+  <g transform="translate(20,10)">
+    <circle cx="20" cy="20" r="20" fill="url(#accent)" />
+    <circle cx="20" cy="20" r="19" fill="url(#glow)" />
+    <path d="M8 27c6.4-5.4 10.6-8.2 17-9 7-.9 12.2 3.3 12.2 8.7S31 35.3 24 35.3c-4.6 0-7.8-2.4-10.1-5.1" fill="none" stroke="#191d2c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M17.8 11.5c1.4-2.5 3.7-4.1 6.4-4.1 3.8 0 6.8 3 6.8 7s-3 7-6.8 7c-2.7 0-5-1.7-6.4-4.3" fill="none" stroke="#191d2c" stroke-width="2.4" stroke-linecap="round" />
+  </g>
+  <text x="80" y="26" font-family="'Playfair Display', 'Times New Roman', serif" font-size="18" fill="#fdf7f1" font-weight="600" letter-spacing="0.04em">Pause</text>
+  <text x="80" y="46" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="16" fill="url(#accent)" font-weight="600" letter-spacing="0.28em" textLength="120">Pilates</text>
 </svg>
