@@ -27,17 +27,27 @@
         <span></span>
       </button>
       <nav class="site-nav" id="primaryNav" aria-label="Navigation principale">
-        <a class="site-nav__link is-active" href="#top">Accueil</a>
-        <a class="site-nav__link" href="#signature">Signature</a>
-        <a class="site-nav__link" href="#studio">Studio</a>
-        <a class="site-nav__link" href="#offres">Offres</a>
-        <a class="site-nav__link" href="#experience">Méthode</a>
-        <a class="site-nav__link" href="#equipe">Équipe</a>
-        <a class="site-nav__link" href="#temoignages">Avis</a>
-        <a class="site-nav__link" href="#contact">Contact</a>
-        <div class="site-nav__cta">
-          <a class="btn btn--outline" href="#experience">Découvrir</a>
-          <a class="btn btn--gold" href="https://www.pausepilates.fr/#lien-inscription-aux-cours">Réserver un cours</a>
+        <div class="site-nav__content">
+          <div class="site-nav__links">
+            <a class="site-nav__link is-active" href="#top">Accueil</a>
+            <a class="site-nav__link" href="#signature">Signature</a>
+            <a class="site-nav__link" href="#studio">Studio</a>
+            <a class="site-nav__link" href="#offres">Offres</a>
+            <a class="site-nav__link" href="#experience">Méthode</a>
+            <a class="site-nav__link" href="#equipe">Équipe</a>
+            <a class="site-nav__link" href="#temoignages">Avis</a>
+            <a class="site-nav__link" href="#contact">Contact</a>
+          </div>
+          <div class="site-nav__cta">
+            <a class="btn btn--outline" href="#experience">Découvrir</a>
+            <a class="btn btn--gold" href="https://www.pausepilates.fr/#lien-inscription-aux-cours">Réserver un cours</a>
+          </div>
+          <div class="site-nav__meta">
+            <strong>Studio Pause Pilates Colmar</strong>
+            <a href="tel:+33389000000">+33 (0)3 89 00 00 00</a>
+            <a href="mailto:bonjour@pausepilates.fr">bonjour@pausepilates.fr</a>
+            <span>15 rue des Marchands · Colmar</span>
+          </div>
         </div>
       </nav>
     </div>
@@ -435,20 +445,89 @@
     const header = document.querySelector('.site-header');
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.getElementById('primaryNav');
-    if (toggle) {
+    const body = document.body;
+    const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled])';
+    let lastFocusedElement = null;
+
+    const getFocusableElements = () =>
+      nav ? Array.from(nav.querySelectorAll(focusableSelectors)).filter((el) => !el.hasAttribute('disabled')) : [];
+
+    const closeMenu = () => {
+      if (!header || !toggle) return;
+      header.classList.remove('is-open');
+      body.classList.remove('has-menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    };
+
+    const openMenu = () => {
+      if (!header || !toggle) return;
+      lastFocusedElement = document.activeElement;
+      header.classList.add('is-open');
+      body.classList.add('has-menu-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      const focusable = getFocusableElements();
+      if (focusable.length) {
+        focusable[0].focus();
+      }
+    };
+
+    if (toggle && nav) {
       toggle.addEventListener('click', () => {
-        const expanded = header.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', expanded);
+        if (header.classList.contains('is-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
-    }
-    if (nav) {
+
       nav.querySelectorAll('a').forEach((link) =>
         link.addEventListener('click', () => {
-          header.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
+          closeMenu();
         })
       );
+
+      const handleDesktopChange = (event) => {
+        if (event.matches) {
+          closeMenu();
+        }
+      };
+
+      const mediaQuery = window.matchMedia('(min-width: 1025px)');
+      handleDesktopChange(mediaQuery);
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handleDesktopChange);
+      } else {
+        mediaQuery.addListener(handleDesktopChange);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (!header.classList.contains('is-open')) return;
+
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeMenu();
+          toggle.focus();
+        } else if (event.key === 'Tab') {
+          const focusable = getFocusableElements();
+          if (!focusable.length) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
     }
+
     const year = document.getElementById('currentYear');
     if (year) {
       year.textContent = new Date().getFullYear();
