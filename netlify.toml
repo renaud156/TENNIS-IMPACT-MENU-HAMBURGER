@@ -1,0 +1,63 @@
+# Site statique : aucune commande de build, publication de la racine du dépôt.
+[build]
+  publish = "."
+  command = ""
+
+# Anciennes pages redirigées vers les sections du nouveau site.
+[[redirects]]
+  from = "/notre-academie.html"
+  to = "/#academie"
+  status = 301
+[[redirects]]
+  from = "/stages_jeunes.html"
+  to = "/#stages"
+  status = 301
+[[redirects]]
+  from = "/reserver.html"
+  to = "/#stages"
+  status = 301
+[[redirects]]
+  from = "/reserver_popup_hostens.html"
+  to = "/#stages"
+  status = 301
+[[redirects]]
+  from = "/lecon_individuelle.html"
+  to = "/#cours"
+  status = 301
+[[redirects]]
+  from = "/reservation_lecon.html"
+  to = "/#cours"
+  status = 301
+[[redirects]]
+  from = "/galerie.html"
+  to = "/#galerie"
+  status = 301
+[[redirects]]
+  from = "/faq.html"
+  to = "/#infos"
+  status = 301
+[[redirects]]
+  from = "/espace_coach.html"
+  to = "/#partenaires"
+  status = 301
+[[redirects]]
+  from = "/paiement.html"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/merci.html"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/politique-confidentialite.html"
+  to = "/mentions-legales.html#donnees"
+  status = 301
+[[redirects]]
+  from = "/payment.php"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
