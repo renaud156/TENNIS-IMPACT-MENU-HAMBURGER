@@ -8,12 +8,29 @@
 <meta name="theme-color" content="#0E1A30">
 <meta property="og:title" content="Impact Tennis Académie">
 <meta property="og:description" content="Stages de tennis 10–18 ans avec hébergement et cours particuliers avec Olivier Renaud, diplômé d'État.">
-<meta property="og:image" content="img/hero.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://tennis-impact.netlify.app/">
+<meta property="og:image" content="https://tennis-impact.netlify.app/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tennis-impact.netlify.app/">
+<link rel="apple-touch-icon" href="img/monogramme.png">
 <meta name="description" content="Impact Tennis Académie : stages de tennis 10–18 ans avec hébergement sur les CREPS et leçons individuelles, du débutant au joueur classé.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+<link rel="preload" href="/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-800.webp" imagesrcset="img/hero-800.webp 800w, img/hero.webp 1101w" imagesizes="(min-width:880px) 50vw, 100vw" fetchpriority="high">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsOrganization", "name": "Impact Tennis Académie", "legalName": "Association Tennis Impact", "url": "https://tennis-impact.netlify.app/", "logo": "https://tennis-impact.netlify.app/img/monogramme.png", "image": "https://tennis-impact.netlify.app/img/og-image.jpg", "description": "Stages de tennis 10–18 ans avec hébergement et cours particuliers, du débutant au joueur classé.", "sport": "Tennis", "telephone": "+33665655605", "address": {"@type": "PostalAddress", "streetAddress": "160 boulevard Berthier", "postalCode": "75017", "addressLocality": "Paris", "addressCountry": "FR"}, "founder": {"@type": "Person", "name": "Olivier Renaud", "jobTitle": "Coach de tennis, brevet d'État"}, "identifier": "SIREN 999290034"}</script>
 <style>
+@font-face{font-family:"Cinzel";src:url(/fonts/cinzel-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cinzel";src:url(/fonts/cinzel-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Jost";src:url(/fonts/jost-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url(/fonts/jost-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url(/fonts/jost-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
 /* Layout : en-tête collant, sections pleine largeur alternant papier et bleu nuit, contenu centré à 1120px.
    Motif : la ligne de fond de court avec sa marque centrale, en séparateur. */
 :root{
@@ -21,7 +38,7 @@
   --paper-2:#EFECE4;
   --ink:#0E1A30;
   --ink-2:#465063;
-  --gold:#A9823A;
+  --gold:#8A6A26;
   --gold-deep:#80611F;
   --gold-soft:#D9C08A;
   --line:#DDD6C7;
@@ -69,7 +86,7 @@ h3{font-size:1.65rem}
 /* Boutons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:2px;font-family:var(--f-text);font-size:.86rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .btn--gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
-.btn--gold:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+.btn--gold:hover{background:#6E521A;border-color:#6E521A}
 .btn--line{border-color:currentColor;color:var(--ink);background:transparent}
 .btn--line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .btn--line-light{border-color:rgba(255,255,255,.55);color:var(--white);background:transparent}
@@ -139,7 +156,7 @@ h3{font-size:1.65rem}
 .order{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
 .order li{padding:22px 16px 22px 0;border-bottom:1px solid var(--line);display:grid;gap:6px;min-width:0}
 .order li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
-.order b{font-family:var(--f-mark);font-weight:500;color:var(--gold);font-size:1rem;letter-spacing:.08em}
+.order b{font-family:var(--f-mark);font-weight:500;color:var(--gold-deep);font-size:1rem;letter-spacing:.08em}
 .order strong{font-family:var(--f-display);font-size:1.6rem;font-weight:600;line-height:1.1}
 .order span{font-size:.92rem;color:var(--ink-2)}
 @media (min-width:880px){.philo{grid-template-columns:.9fr 1.1fr;gap:64px}.order{grid-template-columns:repeat(4,1fr)}.order li,.order li:nth-child(even){padding:24px 18px;border-left:1px solid var(--line)}.order li:first-child{border-left:0;padding-left:0}}
@@ -371,7 +388,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
   <section class="hero" id="accueil">
     <div class="wrap hero__grid">
       <div class="hero__media">
-        <img src="img/hero.webp" alt="Joueur au service sur terre battue, vu du dessus" width="1101" height="1652" fetchpriority="high">
+        <img src="img/hero.webp" srcset="img/hero-800.webp 800w, img/hero.webp 1101w" sizes="(min-width:880px) 50vw, 100vw" alt="Joueur au service sur terre battue, vu du dessus" width="1101" height="1652" fetchpriority="high">
       </div>
       <div class="hero__text">
         <p class="hero__motto">PLAISIR · PERFORMANCE · PROGRESSION</p>
@@ -580,7 +597,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 
       <div class="compare">
         <h3>Comparer les formules</h3>
-        <div class="table-scroll">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau comparatif des formules">
           <table>
             <thead><tr><td></td><th scope="col">Multi-sports</th><th scope="col">Impact 500</th><th scope="col">Impact 1000</th><th scope="col">Grand Chelem</th></tr></thead>
             <tbody>
@@ -817,10 +834,10 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
   </div>
 </footer>
 
-<div class="sticky-cta">
+<nav class="sticky-cta" aria-label="Accès rapide">
   <a class="btn btn--line" href="#stages">Stages</a>
   <a class="btn btn--gold" href="#contact" data-offer="">Nous contacter</a>
-</div>
+</nav>
 
 <script>
 (function(){
